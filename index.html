@@ -6,7 +6,7 @@
 <title>influmae — Carol Anelhe | Arquitetura Sensorial</title>
 <meta name="description" content="Ambientes que acolhem, regulam e desenvolvem. Arquitetura Sensorial para crianças atípicas. Por Carol Anelhe — mãe atípica e especialista em Harvard.">
 <meta property="og:title" content="influmae — Arquitetura Sensorial para crianças atípicas">
-<meta property="og:description" content="E se a casa fosse a resposta? Conheça a Colônia — Mães de Pinguins.">
+<meta property="og:description" content="Nenhuma mãe de pinguim precisa enfrentar o frio sozinha. Conheça a Colônia — Mães de Pinguins.">
 <meta property="og:image" content="https://influmae.com/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -582,15 +582,15 @@
       <em>a resposta?</em>
     </h1>
     <p class="hero-sub fade-up-3">
-      O espaço onde seu filho vive faz algo com ele todos os dias — ajudando ou atrapalhando. Não tem neutro. Por Carol Anelhe, arquiteta sensorial, mãe atípica e cursando Harvard em intervenção precoce em TEA.
+      Transforme sua casa em uma ferramenta de desenvolvimento para seu filho com a curadoria e o conhecimento de Harvard da <strong>Colônia — Mães de Pinguins</strong>.
     </p>
     <div class="hero-badges fade-up-3">
       <span class="badge badge-green">🎓 Harvard — Intervenção Precoce TEA</span>
-      <span class="badge">🐧 Mãe atípica</span>
-      <span class="badge">🏠 Arquitetura Sensorial</span>
+      <span class="badge">📦 Curadoria Semanal</span>
+      <span class="badge">🏠 Sorteio Ninho Sensorial</span>
     </div>
     <div class="hero-actions fade-up-4">
-      <a href="#colonia" class="btn-primary">Entrar na Colônia 🐧</a>
+      <a href="#colonia" class="btn-primary">Entrar na Lista de Espera 🐧</a>
       <a href="#produtos" class="btn-secondary">Ver todos os produtos</a>
     </div>
   </div>
@@ -645,12 +645,12 @@
 
     <!-- E-BOOK -->
     <div class="produto-card destaque">
-      <div class="produto-tag">Disponível agora</div>
+      <div class="produto-tag" style="background:#E8B84B;color:#2C2C2C;">🎁 Bônus de Boas-vindas</div>
       <div class="produto-icon">📖</div>
-      <h3>E se a casa fosse a resposta?</h3>
+      <h3>Nenhuma mãe de pinguim precisa enfrentar o frio sozinha.</h3>
       <p>O guia completo de arquitetura sensorial para mães de crianças atípicas. Checklists por cômodo, os 8 erros mais comuns e 3 transformações reais de famílias.</p>
-      <div class="produto-price">R$ 96</div>
-      <div class="produto-price-note" style="margin-bottom:0.5rem;">acesso imediato após a compra</div>
+      <div class="produto-price">Grátis</div>
+      <div class="produto-price-note" style="margin-bottom:0.5rem;">para membras da Colônia</div>
       <div style="display:inline-block;background:rgba(122,158,138,0.15);border:1px solid var(--green);border-radius:2rem;padding:0.3rem 0.9rem;font-size:0.78rem;color:var(--green-dark);margin-bottom:1rem;">
         🎁 Use o cupom <strong>LANÇAMENTO20</strong> e ganhe 20% de desconto
       </div>
@@ -744,7 +744,7 @@
         <div class="colonia-item-icon">📖</div>
         <div class="colonia-item-text">
           <h4>E-book de brinde</h4>
-          <p>"E se a casa fosse a resposta?" — seu no momento em que entrar na Colônia.</p>
+          <p>"Nenhuma mãe de pinguim precisa enfrentar o frio sozinha." — seu no momento em que entrar na Colônia.</p>
         </div>
       </div>
     </div>
@@ -877,26 +877,31 @@
 
 
 
+
 <script>
   var produtoEspera = '';
   
   async function salvarNaPlanilha(dados) {
     try {
-      // Salva no Google Sheets via Sheet.best
-      await fetch('https://sheet.best/api/sheets/8446969b-8761-496e-827e-89793970664a', {
+      // 1. Salva no Google Sheets via Sheet.best
+      const sheetResponse = await fetch('https://sheet.best/api/sheets/8446969b-8761-496e-827e-89793970664a', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(dados)
       });
       
-      // Envia e-mail de aviso via FormSubmit
-      await fetch('https://formsubmit.co/ajax/carol.dwa@gmail.com', {
+      // 2. Envia e-mail de aviso via FormSubmit (usando form normal para evitar bloqueio de CORS/Proxy)
+      // Criamos um form oculto e submetemos
+      const formData = new FormData();
+      for (const key in dados) {
+        formData.append(key, dados[key]);
+      }
+      formData.append('_subject', 'Nova inscrita na Lista de Espera! 🐧');
+      formData.append('_captcha', 'false');
+      
+      fetch('https://formsubmit.co/ajax/carol.dwa@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          ...dados,
-          _subject: 'Nova inscrita na Lista de Espera! 🐧'
-        })
+        body: formData
       });
       
       return true;
@@ -987,6 +992,7 @@
     }
   }
 </script>
+
 
 
 
