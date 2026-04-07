@@ -718,6 +718,35 @@
     <div class="section-eyebrow">A Colônia — Mães de Pinguins</div>
     <h2 class="section-title" style="color:white">Em breve: <em style="color:#E8B84B">nenhuma mãe fica sozinha</em></h2>
     <p class="section-sub">O pinguim-imperador vive em -60 graus e ainda assim cria seus filhotes. Sabe como? Ele se junta à colônia. As que estão do lado de fora vão pro centro. As do centro vão pra fora. Ninguém fica sozinha por muito tempo.</p>
+    
+    <div style="margin-top:3rem; background:rgba(255,255,255,0.05); padding:2rem; border-radius:24px; border:1px solid rgba(255,255,255,0.1);">
+      <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:#E8B84B; margin-bottom:1.5rem;">Calendário Mensal da Colônia</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:1.5rem;">
+        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:16px;">
+          <strong style="color:#E8B84B; display:block; margin-bottom:0.5rem;">Semana 1</strong>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Tema do mês + Boas-vindas (Carol ao vivo)</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:16px;">
+          <strong style="color:#E8B84B; display:block; margin-bottom:0.5rem;">Semana 2</strong>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Lista de produtos + Explicação sensorial</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:16px;">
+          <strong style="color:#E8B84B; display:block; margin-bottom:0.5rem;">Semana 3</strong>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Live ou áudio exclusivo (20-30 min)</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05); padding:1rem; border-radius:16px;">
+          <strong style="color:#E8B84B; display:block; margin-bottom:0.5rem;">Semana 4</strong>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.7);">Chamado da Colônia (Sorteio Ninho)</p>
+        </div>
+      </div>
+      <div style="margin-top:2rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
+        <h4 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:#E8B84B; margin-bottom:1rem;">Próximos Temas:</h4>
+        <p style="font-size:0.85rem; color:rgba(255,255,255,0.6); line-height:1.6;">
+          Mês 1: Quarto sensorial | Mês 2: Sala e convivência | Mês 3: Banheiro seguro | Mês 4: Canto de estudos | Mês 5: Área externa | Mês 6: Diagnóstico da casa inteira
+        </p>
+      </div>
+    </div>
+
     <div class="colonia-items">
       <div class="colonia-item">
         <div class="colonia-item-icon">📦</div>
@@ -878,6 +907,7 @@
 
 
 
+
 <script>
   var produtoEspera = '';
   
@@ -891,7 +921,6 @@
       });
       
       // 2. Envia e-mail de aviso via FormSubmit (usando form normal para evitar bloqueio de CORS/Proxy)
-      // Criamos um form oculto e submetemos
       const formData = new FormData();
       for (const key in dados) {
         formData.append(key, dados[key]);
@@ -992,6 +1021,7 @@
     }
   }
 </script>
+
 
 
 
