@@ -604,6 +604,7 @@
       <img src="carol.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center">
     </div>
     <div class="hero-float-card">
+      <img src="logoinstagram.png" style="width:24px;height:24px;object-fit:contain;display:block;margin-bottom:0.4rem;">
       <div class="stat">10k</div>
       <div class="stat-label">seguidoras no Instagram</div>
     </div>
@@ -720,8 +721,11 @@
 </section>
 
 <!-- COLÔNIA DESTAQUE -->
-<section class="colonia-section" id="colonia">
-  <div>
+<section class="colonia-section" id="colonia" style="position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="colonia.png" style="width:100%;height:100%;object-fit:cover;opacity:0.08;filter:grayscale(30%);">
+  </div>
+  <div style="position:relative;z-index:1;">
     <div class="section-eyebrow">A Colônia — Mães de Pinguins</div>
     <h2 class="section-title" style="color:white">Abre essa semana: <em style="color:#E8B84B">entre na lista VIP agora</em></h2>
     <p class="section-sub">O pinguim-imperador vive em -60 graus e ainda assim cria seus filhotes. Sabe como? Ele se junta à colônia. As que estão do lado de fora vão pro centro. As do centro vão pra fora. Ninguém fica sozinha por muito tempo.</p>
@@ -789,7 +793,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div><!-- fecha z-index:1 wrapper -->
 
   <div class="colonia-preco-box">
     <div class="preco-label">⏳ Abre essa semana — lista VIP</div>
@@ -817,7 +821,10 @@
   <div style="max-width:900px;margin:0 auto;">
     <div class="section-eyebrow">Como funciona por dentro</div>
     <h2 class="section-title">Cada semana tem <em>uma entrega garantida</em></h2>
-    <p class="section-sub" style="margin-bottom:3.5rem;">Não é um grupo qualquer de WhatsApp. A Colônia tem estrutura, ritmo e intenção. Toda semana você sabe o que esperar — e toda semana vale a assinatura.</p>
+    <div style="display:flex;align-items:flex-start;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+      <p class="section-sub" style="margin-bottom:0;flex:1;min-width:280px;">Não é um grupo qualquer de WhatsApp. A Colônia tem estrutura, ritmo e intenção. Toda semana você sabe o que esperar — e toda semana vale a assinatura.</p>
+      <img src="pinguim-mae.png" style="width:120px;height:120px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 8px 24px rgba(44,44,44,0.12));">
+    </div>
 
     <!-- CALENDÁRIO SEMANAL -->
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-bottom:4rem;">
@@ -1021,16 +1028,17 @@
 <script>
   var produtoEspera = '';
 
-  // ===== SHEET.BEST CONFIG =====
-  var SHEETBEST_URL = 'https://sheet.best/api/sheets/8446969b-8761-496e-827e-89793970664a';
+  // ===== GOOGLE APPS SCRIPT CONFIG =====
+  var SHEETBEST_URL = 'https://script.google.com/macros/s/AKfycbwFHXruKcbGRYKPngDu9_toauULZ6txg11L05T3ZrTwqwMQrRlQ_gsQYoWtgx1RLMrt/exec';
 
   function salvarNaPlanilha(dados) {
     return fetch(SHEETBEST_URL, {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)
     }).catch(function(err) {
-      console.warn('Sheet.best indisponível, dado salvo apenas localmente.', err);
+      console.warn('Erro ao salvar na planilha, dado salvo apenas localmente.', err);
     });
   }
 
