@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lista VIP — Colônia Mães de Pinguins · influmae</title>
+<meta name="description" content="As primeiras 50 membras entram com desconto que nunca mais vai existir. Garanta seu lugar agora.">
+<meta property="og:title" content="Lista VIP — Colônia Mães de Pinguins">
+<meta property="og:description" content="As primeiras 50 membras entram com desconto exclusivo de lançamento. Garanta o seu.">
+<meta property="og:image" content="https://influmae.com/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #EDD9C8;
+    --green: #7A9E8A;
+    --green-dark: #5C8070;
+    --green-deep: #3D6054;
+    --dark: #2C2C2C;
+    --cream: #F5EDE4;
+    --yellow: #E8B84B;
+    --white: #FDFAF7;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* BG PINGUINS */
+  .bg-layer {
+    position: fixed; inset: 0; z-index: 0;
+    background: url('colonia.png') center/cover no-repeat;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  /* NAV MINIMALISTA */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.2rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(44,44,44,0.85); backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--white); text-decoration: none; }
+  .nav-logo span { color: var(--green); }
+  .nav-vagas {
+    font-size: 0.78rem; font-weight: 500;
+    background: rgba(232,184,75,0.15); border: 1px solid rgba(232,184,75,0.4);
+    color: var(--yellow); padding: 0.4rem 1rem; border-radius: 2rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* HERO — TELA INTEIRA */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 7rem 1.5rem 4rem;
+    position: relative; z-index: 1;
+  }
+
+  /* CONTADOR DE VAGAS */
+  .vagas-bar {
+    display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    margin-bottom: 2.5rem;
+  }
+  .vagas-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--yellow);
+  }
+  .vagas-track {
+    width: 220px; height: 6px;
+    background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;
+  }
+  .vagas-fill {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(90deg, var(--green), var(--yellow));
+    animation: fillBar 1.5s 0.5s ease both;
+  }
+  @keyframes fillBar { from { width: 0; } to { width: 68%; } }
+  .vagas-num {
+    font-family: var(--serif); font-size: 0.9rem; color: rgba(255,255,255,0.5);
+  }
+  .vagas-num strong { color: var(--yellow); }
+
+  /* EYEBROW */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--green);
+    margin-bottom: 1.5rem;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: ''; display: block;
+    width: 24px; height: 1px; background: var(--green);
+  }
+
+  /* TÍTULO */
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    font-weight: 300; line-height: 1.05;
+    color: var(--white); margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-title em { font-style: italic; color: var(--yellow); display: block; }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.65); max-width: 520px;
+    line-height: 1.8; margin-bottom: 0.8rem;
+    animation: fadeUp 0.8s 0.25s ease both;
+  }
+  .hero-cta-text {
+    font-size: 0.85rem; color: var(--yellow);
+    font-weight: 500; margin-bottom: 3rem;
+    animation: fadeUp 0.8s 0.35s ease both;
+  }
+
+  /* FORM */
+  .form-wrap {
+    width: 100%; max-width: 480px;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+  .form-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px; padding: 2rem;
+    backdrop-filter: blur(8px);
+  }
+  .form-box label {
+    display: block; font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 0.4rem;
+  }
+  .form-box input {
+    width: 100%; padding: 0.9rem 1.2rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; font-family: var(--sans);
+    font-size: 0.95rem; color: var(--white);
+    outline: none; transition: border-color 0.2s, background 0.2s;
+    margin-bottom: 1rem;
+  }
+  .form-box input::placeholder { color: rgba(255,255,255,0.3); }
+  .form-box input:focus {
+    border-color: var(--yellow);
+    background: rgba(255,255,255,0.12);
+  }
+
+  /* BOTÃO PRINCIPAL */
+  .btn-vip {
+    width: 100%; padding: 1.1rem;
+    background: var(--yellow); color: var(--dark);
+    border: none; border-radius: 12px;
+    font-family: var(--sans); font-size: 1rem; font-weight: 500;
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    position: relative; overflow: hidden;
+    letter-spacing: 0.02em;
+  }
+  .btn-vip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(232,184,75,0.35);
+    background: #d4a43d;
+  }
+  .btn-vip:active { transform: translateY(0); }
+  .btn-vip::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .form-nota {
+    text-align: center; font-size: 0.75rem;
+    color: rgba(255,255,255,0.3); margin-top: 0.8rem;
+  }
+
+  /* ESTADO DE SUCESSO */
+  .sucesso {
+    display: none; text-align: center; padding: 1rem 0;
+  }
+  .sucesso-icon { font-size: 3rem; margin-bottom: 0.8rem; }
+  .sucesso h3 {
+    font-family: var(--serif); font-size: 1.8rem;
+    font-weight: 300; color: var(--white); margin-bottom: 0.5rem;
+  }
+  .sucesso p { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+  .sucesso-share {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 1.5rem; background: var(--green);
+    color: var(--white); padding: 0.8rem 1.5rem;
+    border-radius: 2rem; text-decoration: none;
+    font-size: 0.85rem; font-weight: 500;
+    transition: background 0.2s;
+  }
+  .sucesso-share:hover { background: var(--green-dark); }
+
+  /* BENEFÍCIOS RÁPIDOS */
+  .quick-benefits {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    justify-content: center; margin-top: 2.5rem;
+    animation: fadeUp 0.8s 0.6s ease both;
+  }
+  .qb {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 0.35rem 0.9rem; border-radius: 2rem;
+  }
+
+  /* SEÇÃO PROVA SOCIAL */
+  .prova {
+    position: relative; z-index: 1;
+    padding: 5rem 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .prova-inner { max-width: 860px; margin: 0 auto; text-align: center; }
+  .prova-eyebrow {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
+  }
+  .prova h2 {
+    font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--white); margin-bottom: 0.5rem;
+  }
+  .prova h2 em { font-style: italic; color: var(--yellow); }
+  .prova-sub { font-size: 0.95rem; color: rgba(255,255,255,0.5); margin-bottom: 3rem; }
+  .depo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .depo-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px; padding: 1.5rem; text-align: left;
+  }
+  .depo-stars { color: var(--yellow); font-size: 0.85rem; margin-bottom: 0.7rem; }
+  .depo-text { font-size: 0.85rem; line-height: 1.8; color: rgba(255,255,255,0.75); font-style: italic; margin-bottom: 1rem; }
+  .depo-autor { font-size: 0.75rem; font-weight: 500; color: rgba(255,255,255,0.4); }
+
+  /* O QUE VEM */
+  .oque-vem {
+    position: relative; z-index: 1;
+    padding: 5rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .oque-inner { max-width: 860px; margin: 0 auto; }
+  .oque-eyebrow {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .oque-eyebrow::before { content:''; width:20px; height:1px; background:var(--green); }
+  .oque-title {
+    font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--white); margin-bottom: 0.5rem;
+  }
+  .oque-title em { font-style: italic; color: var(--yellow); }
+  .oque-sub { font-size: 0.95rem; color: rgba(255,255,255,0.5); margin-bottom: 2.5rem; max-width: 500px; }
+  .items-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .item-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 18px; padding: 1.5rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .item-card:hover { border-color: rgba(122,158,138,0.4); background: rgba(122,158,138,0.05); }
+  .item-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .item-card h4 { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--white); margin-bottom: 0.3rem; }
+  .item-card p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .item-tag {
+    display: inline-block; margin-top: 0.7rem;
+    font-size: 0.7rem; font-weight: 500; padding: 0.2rem 0.7rem;
+    border-radius: 2rem; background: rgba(122,158,138,0.15); color: var(--green);
+  }
+  .item-card.gold-card { border-color: rgba(232,184,75,0.2); }
+  .item-card.gold-card:hover { border-color: rgba(232,184,75,0.5); background: rgba(232,184,75,0.05); }
+  .item-card.gold-card .item-tag { background: rgba(232,184,75,0.15); color: var(--yellow); }
+
+  /* CTA BOTTOM */
+  .cta-bottom {
+    position: relative; z-index: 1;
+    padding: 5rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(to bottom, transparent, rgba(61,96,84,0.15));
+  }
+  .cta-bottom .penguin { font-size: 3rem; margin-bottom: 1rem; }
+  .cta-bottom h2 {
+    font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 300; color: var(--white); margin-bottom: 0.8rem;
+  }
+  .cta-bottom h2 em { font-style: italic; color: var(--yellow); }
+  .cta-bottom p { font-size: 0.95rem; color: rgba(255,255,255,0.5); max-width: 440px; margin: 0 auto 2rem; line-height: 1.8; }
+  .btn-bottom {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: var(--yellow); color: var(--dark);
+    padding: 1.1rem 2.5rem; border-radius: 3rem;
+    font-size: 1rem; font-weight: 500; text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-bottom:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(232,184,75,0.3); }
+
+  /* FOOTER */
+  footer {
+    position: relative; z-index: 1;
+    background: rgba(0,0,0,0.3); padding: 2rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--white); }
+  .footer-logo span { color: var(--green); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--green); }
+  .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.2); }
+
+  /* ANIMAÇÕES */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+  .pulse { animation: pulse 2s infinite; }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.2rem; }
+    .hero { padding: 6rem 1.2rem 3rem; }
+    .form-box { padding: 1.5rem; }
+    footer { flex-direction: column; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-layer"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">influ<span>mae</span></a>
+  <div class="nav-vagas pulse">⏳ 50 vagas com desconto</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- BARRA DE VAGAS -->
+  <div class="vagas-bar">
+    <div class="vagas-label">Vagas VIP preenchidas</div>
+    <div class="vagas-track"><div class="vagas-fill"></div></div>
+    <div class="vagas-num">34 de <strong>50</strong> vagas ocupadas</div>
+  </div>
+
+  <div class="eyebrow">Colônia Mães de Pinguins</div>
+
+  <h1 class="hero-title">
+    Nenhuma mãe fica
+    <em>sozinha no frio.</em>
+  </h1>
+
+  <p class="hero-sub">
+    As primeiras 50 membras entram com desconto que nunca mais vai existir. Garante seu lugar agora antes de fechar.
+  </p>
+  <p class="hero-cta-text">🐧 Comenta <strong>COLÔNIA</strong> no Instagram e eu te mando o link direto</p>
+
+  <!-- FORMULÁRIO -->
+  <div class="form-wrap">
+    <div class="form-box" id="form-container">
+      <form id="form-vip" onsubmit="enviarVIP(event)">
+        <label for="nome">Seu nome</label>
+        <input type="text" id="nome" placeholder="Como posso te chamar?" required autocomplete="given-name">
+
+        <label for="email">Seu melhor e-mail</label>
+        <input type="email" id="email" placeholder="você@email.com" required autocomplete="email">
+
+        <label for="whatsapp">WhatsApp com DDD</label>
+        <input type="tel" id="whatsapp" placeholder="11 99999-9999" required autocomplete="tel">
+
+        <button type="submit" class="btn-vip" id="btn-submit">
+          🐧 Garantir meu lugar VIP agora
+        </button>
+      </form>
+      <div class="sucesso" id="sucesso">
+        <div class="sucesso-icon">🐧</div>
+        <h3>Pronto, xuxu!<br>Você está na lista VIP.</h3>
+        <p>Assim que a Colônia abrir você recebe o link com desconto exclusivo — antes de qualquer outra pessoa.</p>
+        <a href="https://instagram.com/influmae" target="_blank" class="sucesso-share">
+          Seguir @influmae para não perder nada →
+        </a>
+      </div>
+      <p class="form-nota">🔒 Sem spam. Seus dados ficam só com a Carol.</p>
+    </div>
+  </div>
+
+  <!-- MICRO BENEFÍCIOS -->
+  <div class="quick-benefits">
+    <span class="qb">📦 Curadoria semanal de produtos</span>
+    <span class="qb">🎓 Harvard toda semana</span>
+    <span class="qb">🏠 Sorteio R$5.000 a cada 45 dias</span>
+    <span class="qb">📖 E-book de brinde na entrada</span>
+  </div>
+
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="prova">
+  <div class="prova-inner">
+    <div class="prova-eyebrow">O que dizem</div>
+    <h2>Mães que já <em>transformaram</em></h2>
+    <p class="prova-sub">Casos reais de mães que aplicaram arquitetura sensorial em casa.</p>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"Troquei a lâmpada do quarto do meu filho na segunda. Na quinta ele dormiu 40 minutos mais rápido. Não acredito que era tão simples."</p>
+        <div class="depo-autor">Mãe do Theo, 4 anos · TEA</div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"O banho da Luna durava 40 minutos de crise todo dia. Depois de três mudanças no banheiro, hoje leva 15 minutos com tranquilidade."</p>
+        <div class="depo-autor">Mãe da Luna, 6 anos · TDAH</div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"Ele veio sentar no cantinho enquanto eu assistia TV do lado. Ficamos uma hora juntos. Eu chorei. Parecia impossível antes."</p>
+        <div class="depo-autor">Mãe do Pedro, 5 anos · TEA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VEM NA COLÔNIA -->
+<section class="oque-vem">
+  <div class="oque-inner">
+    <div class="oque-eyebrow">O que você recebe</div>
+    <h2 class="oque-title">Tudo que chega <em>toda semana</em></h2>
+    <p class="oque-sub">Não é um grupo qualquer. Tem estrutura, ritmo e entrega garantida.</p>
+    <div class="items-grid">
+      <div class="item-card">
+        <div class="item-icon">📦</div>
+        <h4>Curadoria semanal</h4>
+        <p>Produtos sensoriais testados com links diretos e a justificativa sensorial de cada um. Você não pesquisa — Carol pesquisa por você.</p>
+        <span class="item-tag">Toda semana</span>
+      </div>
+      <div class="item-card">
+        <div class="item-icon">🎓</div>
+        <h4>Harvard toda semana</h4>
+        <p>O que Carol aprende no curso de intervenção precoce em TEA, traduzido pra linguagem de mãe. Sem enrolação.</p>
+        <span class="item-tag">Exclusivo</span>
+      </div>
+      <div class="item-card gold-card">
+        <div class="item-icon">🏠</div>
+        <h4>Sorteio Ninho Sensorial</h4>
+        <p>Projeto completo de arquitetura sensorial — um cômodo inteiro feito pela Carol. R$5.000. A cada 45 dias. Você já participa ao entrar.</p>
+        <span class="item-tag">A cada 45 dias</span>
+      </div>
+      <div class="item-card">
+        <div class="item-icon">📖</div>
+        <h4>E-book de brinde</h4>
+        <p>"E se a casa fosse a resposta?" entregue automaticamente. O guia completo de arquitetura sensorial para mães atípicas.</p>
+        <span class="item-tag">Automático na entrada</span>
+      </div>
+      <div class="item-card">
+        <div class="item-icon">🎥</div>
+        <h4>Carol ao vivo</h4>
+        <p>2x por mês Carol aparece ao vivo — para revelar o tema do mês e para uma live exclusiva aprofundando o conteúdo.</p>
+        <span class="item-tag">2x por mês</span>
+      </div>
+      <div class="item-card">
+        <div class="item-icon">🤝</div>
+        <h4>Comunidade de mães</h4>
+        <p>Só uma mãe entende a outra. Um grupo onde você encontra acolhimento, troca real e apoio de quem vive a mesma realidade.</p>
+        <span class="item-tag">Grupo ativo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-bottom">
+  <div class="penguin">🐧</div>
+  <h2>Só <em>50 vagas</em><br>com desconto VIP</h2>
+  <p>Quando essas vagas acabarem, acabaram. O desconto de lançamento não volta. Garanta o seu agora.</p>
+  <a href="#form-container" class="btn-bottom" onclick="document.getElementById('nome').focus()">
+    Garantir meu lugar VIP →
+  </a>
+  <p style="margin-top:1rem;font-size:0.78rem;color:rgba(255,255,255,0.3);">
+    Ou comenta <strong style="color:var(--yellow);">COLÔNIA</strong> no @influmae e eu te mando o link
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">influ<span>mae</span></div>
+  <div class="footer-links">
+    <a href="https://instagram.com/influmae" target="_blank">@influmae</a>
+    <a href="/">Início</a>
+    <a href="/colonia">A Colônia</a>
+  </div>
+  <div class="footer-copy">© 2025 influmae · Carol Anelhe</div>
+</footer>
+
+<script>
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwFHXruKcbGRYKPngDu9_toauULZ6txg11L05T3ZrTwqwMQrRlQ_gsQYoWtgx1RLMrt/exec';
+
+  function enviarVIP(e) {
+    e.preventDefault();
+    var btn = document.getElementById('btn-submit');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    var nome     = document.getElementById('nome').value.trim();
+    var email    = document.getElementById('email').value.trim();
+    var whatsapp = document.getElementById('whatsapp').value.trim();
+    var data     = new Date().toLocaleString('pt-BR', { timeZone: 'America/New_York' });
+
+    var payload = {
+      nome: nome,
+      email: email,
+      whatsapp: whatsapp,
+      produto: 'Lista VIP — Colônia',
+      data: data
+    };
+
+    // Backup local
+    try {
+      var lista = JSON.parse(localStorage.getItem('lista_vip') || '[]');
+      lista.push(payload);
+      localStorage.setItem('lista_vip', JSON.stringify(lista));
+    } catch(err) {}
+
+    // Envia para Google Sheets
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).finally(function() {
+      document.getElementById('form-vip').style.display = 'none';
+      document.getElementById('sucesso').style.display = 'block';
+    });
+  }
+
+  // Smooth scroll para o form
+  document.querySelectorAll('a[href="#form-container"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('form-container').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(function() { document.getElementById('nome').focus(); }, 600);
+    });
+  });
+</script>
+
+</body>
+</html>
