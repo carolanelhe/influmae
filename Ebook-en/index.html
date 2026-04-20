@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What If Home Was the Answer? — E-book by Carol Anelhe | Sensory Architecture</title>
+  <meta name="description" content="The complete guide to sensory architecture for moms of atypical children. Room-by-room checklists, the 8 most common mistakes, and 3 real family transformations. By Carol Anelhe — Harvard early intervention specialist.">
+  <meta property="og:title" content="What If Home Was the Answer? — E-book by Carol Anelhe">
+  <meta property="og:description" content="The complete sensory architecture guide for moms of atypical children. Instant access after purchase.">
+  <meta property="og:image" content="https://influmae.com/og.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EDD9C8;
+      --bg-dark: #E2C9B4;
+      --green: #7A9E8A;
+      --green-dark: #5C8070;
+      --green-deep: #3D6054;
+      --dark: #2C2C2C;
+      --cream: #F5EDE4;
+      --yellow: #E8B84B;
+      --white: #FDFAF7;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(237,217,200,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(44,44,44,0.08);
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--dark); text-decoration: none; letter-spacing: 0.02em; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 400; color: var(--dark); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta {
+      background: var(--green) !important; color: var(--white) !important;
+      padding: 0.55rem 1.4rem !important; border-radius: 2rem !important;
+      opacity: 1 !important; font-size: 0.82rem !important;
+      transition: background 0.2s !important; text-decoration: none !important;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; padding: 7rem 4rem 4rem; gap: 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; right: -120px; top: 50%;
+      transform: translateY(-50%); width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(122,158,138,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-text { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-eyebrow::before { content: ''; display: inline-block; width: 32px; height: 1px; background: var(--green); }
+    .hero h1 { font-family: var(--serif); font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 300; line-height: 1.1; color: var(--dark); margin-bottom: 1.5rem; }
+    .hero h1 em { font-style: italic; color: var(--green-dark); }
+    .hero-sub { font-size: 1.05rem; line-height: 1.8; color: rgba(44,44,44,0.75); max-width: 520px; margin-bottom: 2rem; }
+    .hero-highlight {
+      background: rgba(232,184,75,0.15); border-left: 3px solid var(--yellow);
+      padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 4px;
+      font-size: 0.95rem; color: rgba(44,44,44,0.85); font-weight: 400;
+    }
+    .hero-highlight strong { color: var(--dark); font-weight: 500; }
+    .hero-actions { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--green); color: var(--white);
+      padding: 1.1rem 2.5rem; border-radius: 3rem;
+      font-size: 1rem; font-weight: 500; text-decoration: none;
+      letter-spacing: 0.02em; transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(122,158,138,0.25);
+    }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--green-dark); box-shadow: 0 8px 24px rgba(122,158,138,0.35); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--dark);
+      padding: 1rem 2rem; border-radius: 3rem;
+      border: 1px solid rgba(44,44,44,0.3);
+      font-size: 0.9rem; font-weight: 400; text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s; cursor: pointer; font-family: var(--sans);
+    }
+    .btn-secondary:hover { border-color: var(--green); transform: translateY(-2px); }
+
+    /* EBOOK COVER */
+    .hero-visual { display: flex; justify-content: center; align-items: center; position: relative; }
+    .ebook-cover {
+      width: 380px; aspect-ratio: 0.7; background: var(--cream);
+      border-radius: 20px; overflow: hidden; position: relative;
+      box-shadow: 0 20px 60px rgba(44,44,44,0.2);
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; padding: 2rem; text-align: center;
+      border: 2px solid rgba(122,158,138,0.15);
+    }
+    .ebook-cover-header { width: 100%; padding-top: 1rem; margin-bottom: 1rem; }
+    .ebook-icon { font-size: 3rem; margin-bottom: 0.5rem; }
+    .ebook-cover h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; line-height: 1.2; color: var(--dark); margin-bottom: 0.5rem; }
+    .ebook-cover h2 em { font-style: italic; color: var(--green-dark); }
+    .ebook-cover-meta { font-size: 0.8rem; color: rgba(44,44,44,0.6); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(44,44,44,0.1); }
+    .ebook-badge {
+      display: inline-block; background: rgba(122,158,138,0.2);
+      border: 1px solid var(--green); color: var(--green-dark);
+      padding: 0.4rem 0.9rem; border-radius: 2rem;
+      font-size: 0.7rem; font-weight: 500; margin-top: 1rem;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    /* SECTIONS */
+    section { padding: 6rem 4rem; }
+    .section-eyebrow {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .section-eyebrow::before { content:''; width:24px; height:1px; background:var(--green); }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.2rem; }
+    .section-title em { font-style: italic; color: var(--green-dark); }
+    .section-sub { font-size: 1rem; color: rgba(44,44,44,0.7); max-width: 560px; line-height: 1.8; }
+
+    /* CONTENT */
+    .content-section { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .content-text h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 300; color: var(--dark); margin-bottom: 1.5rem; line-height: 1.3; }
+    .content-text h3 em { font-style: italic; color: var(--green-dark); }
+    .content-text p { margin-bottom: 1.2rem; font-size: 0.95rem; color: rgba(44,44,44,0.8); line-height: 1.9; }
+    .content-list { list-style: none; margin: 2rem 0; }
+    .content-list li { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; font-size: 0.95rem; color: rgba(44,44,44,0.8); }
+    .content-list li::before { content: '✓'; color: var(--green); font-weight: 600; font-size: 1.2rem; flex-shrink: 0; margin-top: -2px; }
+
+    /* BENEFITS */
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .benefit-card { background: var(--white); border-radius: 16px; padding: 2rem; border: 1px solid rgba(44,44,44,0.06); transition: transform 0.25s, box-shadow 0.25s; }
+    .benefit-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(44,44,44,0.1); }
+    .benefit-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .benefit-card h4 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; color: var(--dark); margin-bottom: 0.8rem; }
+    .benefit-card p { font-size: 0.9rem; color: rgba(44,44,44,0.7); line-height: 1.7; }
+
+    /* TESTIMONIAL */
+    .testimonial-section { background: var(--white); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .testimonial-text blockquote { font-family: var(--serif); font-size: 1.8rem; font-weight: 300; font-style: italic; line-height: 1.4; color: var(--dark); border-left: 3px solid var(--green); padding-left: 2rem; margin-bottom: 1.5rem; }
+    .testimonial-author { font-size: 0.95rem; color: rgba(44,44,44,0.7); margin-bottom: 0.5rem; }
+    .testimonial-author strong { color: var(--dark); font-weight: 500; }
+    .testimonial-result { background: rgba(122,158,138,0.1); border-left: 3px solid var(--green); padding: 1.5rem; border-radius: 4px; margin-top: 2rem; }
+    .testimonial-result strong { color: var(--green-dark); display: block; margin-bottom: 0.5rem; }
+    .testimonial-img { width: 100%; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; border: 2px solid rgba(122,158,138,0.2); }
+    .testimonial-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+    /* SOCIAL PROOF */
+    .social-proof { background: var(--bg); }
+    .depo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .depo-card { background: var(--white); border-radius: 20px; padding: 1.8rem; border: 1px solid rgba(44,44,44,0.06); }
+    .depo-stars { color: var(--yellow); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .depo-text { font-size: 0.88rem; line-height: 1.8; color: rgba(44,44,44,0.8); font-style: italic; margin-bottom: 1.2rem; }
+    .depo-autor { font-size: 0.78rem; font-weight: 500; color: var(--dark); }
+    .depo-tag { font-size: 0.72rem; color: rgba(44,44,44,0.45); }
+
+    /* PRICING */
+    .pricing-section { background: var(--bg); text-align: center; }
+    .pricing-card { background: var(--white); border-radius: 24px; padding: 3rem 2rem; border: 2px solid var(--green); max-width: 500px; margin: 3rem auto; box-shadow: 0 12px 40px rgba(122,158,138,0.15); }
+    .pricing-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .pricing-title { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--dark); margin-bottom: 1rem; }
+    .pricing-description { font-size: 0.95rem; color: rgba(44,44,44,0.7); line-height: 1.8; margin-bottom: 2rem; }
+    .pricing-price { font-family: var(--serif); font-size: 3.5rem; font-weight: 600; color: var(--green); margin-bottom: 0.5rem; }
+    .pricing-price-note { font-size: 0.85rem; color: rgba(44,44,44,0.6); margin-bottom: 2rem; }
+    .pricing-features { list-style: none; text-align: left; margin-bottom: 2rem; }
+    .pricing-features li { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; font-size: 0.95rem; color: rgba(44,44,44,0.8); }
+    .pricing-features li::before { content: '✓'; color: var(--green); font-weight: 600; font-size: 1.2rem; flex-shrink: 0; }
+    .btn-buy {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background: var(--green); color: var(--white);
+      padding: 1.2rem 3rem; border-radius: 3rem;
+      font-size: 1.05rem; font-weight: 500; text-decoration: none;
+      letter-spacing: 0.02em; transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(122,158,138,0.3); width: 100%;
+    }
+    .btn-buy:hover { transform: translateY(-3px); background: var(--green-dark); box-shadow: 0 10px 32px rgba(122,158,138,0.4); }
+
+    /* ABOUT */
+    .about-author { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .author-text h3 { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--dark); margin-bottom: 1.5rem; }
+    .author-text p { margin-bottom: 1.2rem; font-size: 0.95rem; color: rgba(44,44,44,0.8); line-height: 1.9; }
+    .author-credentials { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
+    .credential { display: flex; align-items: center; gap: 0.5rem; background: var(--white); border-radius: 2rem; padding: 0.6rem 1.2rem; font-size: 0.8rem; font-weight: 400; color: var(--dark); border: 1px solid rgba(44,44,44,0.1); }
+    .author-img { width: 100%; aspect-ratio: 4/5; border-radius: 20px; overflow: hidden; border: 2px solid rgba(122,158,138,0.2); }
+    .author-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; border-radius: 18px; }
+
+    /* CTA FINAL */
+    .cta-final { background: var(--green-deep); color: var(--white); text-align: center; padding: 5rem 4rem; border-radius: 24px; margin: 4rem; }
+    .cta-final h2 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 300; margin-bottom: 1rem; line-height: 1.3; }
+    .cta-final h2 em { font-style: italic; color: var(--yellow); }
+    .cta-final p { color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 2.5rem; font-size: 1rem; line-height: 1.8; }
+    .btn-cta-final { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--yellow); color: var(--dark); padding: 1.2rem 3rem; border-radius: 3rem; font-size: 1.05rem; font-weight: 500; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
+    .btn-cta-final:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-family: var(--serif); font-size: 1.3rem; color: var(--white); }
+    .footer-logo span { color: var(--green); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--green); }
+    .footer-copy { font-size: 0.75rem; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
+    .fade-up-3 { animation: fadeUp 0.7s 0.3s ease both; }
+    .fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
+
+    /* MODAL */
+    .modal { display: none; position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); animation: fadeIn 0.3s ease; }
+    .modal.active { display: flex; }
+    .modal-content { background-color: var(--white); margin: auto; padding: 3rem; border-radius: 24px; width: 90%; max-width: 600px; max-height: 85vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: slideUp 0.3s ease; }
+    .modal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; }
+    .modal-header h2 { font-family: var(--serif); font-size: 2rem; font-weight: 300; color: var(--dark); margin: 0; }
+    .modal-close { background: none; border: none; font-size: 2rem; color: rgba(44,44,44,0.5); cursor: pointer; padding: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: color 0.2s; }
+    .modal-close:hover { color: var(--dark); }
+    .chapters-list { list-style: none; }
+    .chapter-item { background: var(--cream); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid var(--green); transition: transform 0.2s, box-shadow 0.2s; }
+    .chapter-item:hover { transform: translateX(4px); box-shadow: 0 4px 12px rgba(122,158,138,0.15); }
+    .chapter-number { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--green); margin-bottom: 0.3rem; }
+    .chapter-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: var(--dark); margin-bottom: 0.5rem; }
+    .chapter-description { font-size: 0.9rem; color: rgba(44,44,44,0.7); line-height: 1.6; }
+    .modal-footer { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(44,44,44,0.1); text-align: center; }
+    .modal-footer p { font-size: 0.95rem; color: rgba(44,44,44,0.7); margin-bottom: 1rem; }
+    .btn-modal-buy { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; background: var(--green); color: var(--white); padding: 1rem 2.5rem; border-radius: 3rem; font-size: 1rem; font-weight: 500; text-decoration: none; transition: transform 0.2s, background 0.2s; border: none; cursor: pointer; }
+    .btn-modal-buy:hover { transform: translateY(-2px); background: var(--green-dark); }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    /* FAQ */
+    .faq-item { background:var(--white); border-radius:14px; border:1px solid rgba(44,44,44,0.06); overflow:hidden; cursor:pointer; }
+    .faq-q { width:100%; text-align:left; padding:1.2rem 1.5rem; background:none; border:none; cursor:pointer; font-family:var(--sans); font-size:0.95rem; font-weight:500; color:var(--dark); display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+    .faq-q span { font-size:1.2rem; transition:transform 0.2s; flex-shrink:0; }
+    .faq-item.open .faq-q span { transform:rotate(45deg); }
+    .faq-a { display:none; padding:0 1.5rem 1.2rem; font-size:0.88rem; color:rgba(44,44,44,0.75); line-height:1.8; }
+    .faq-item.open .faq-a { display:block; }
+
+    /* HARVARD BADGE */
+    .harvard-badge { display:inline-flex; align-items:center; gap:0.6rem; background:var(--green-deep); color:var(--white); padding:0.5rem 1.1rem; border-radius:2rem; font-size:0.78rem; font-weight:500; margin-bottom:1.5rem; letter-spacing:0.03em; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.2rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 3rem; }
+      .hero-visual { order: -1; }
+      .ebook-cover { width: 280px; }
+      section { padding: 4rem 1.5rem; }
+      .content-section { grid-template-columns: 1fr; gap: 2.5rem; }
+      .testimonial-section { grid-template-columns: 1fr; gap: 3rem; }
+      .about-author { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
+      .cta-final { padding: 3rem 1.5rem; margin: 2rem 1.5rem; }
+      .pricing-card { margin: 2rem 1rem; }
+      .modal-content { width: 95%; padding: 2rem; max-height: 90vh; }
+      .modal-header h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div id="chaptersModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>What's inside the e-book</h2>
+      <button class="modal-close" onclick="closeChaptersModal()">×</button>
+    </div>
+    <ul class="chapters-list">
+      <li class="chapter-item">
+        <div class="chapter-number">Chapter 1</div>
+        <div class="chapter-title">The Home Speaks</div>
+        <div class="chapter-description">Why the space where your child lives does something to them every day — helping or hurting. There is no neutral. The science behind sensory architecture and early intervention.</div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-number">Chapter 2</div>
+        <div class="chapter-title">The 5 Senses at Home</div>
+        <div class="chapter-description">How sight, hearing, touch, smell and movement are impacted by the home environment — and what you can adjust in each one.</div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-number">Chapter 3</div>
+        <div class="chapter-title">Room-by-Room Checklists</div>
+        <div class="chapter-description">Practical checklists for the bedroom, living room, bathroom, and kitchen. Start with any room today — no renovation required.</div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-number">Chapter 4</div>
+        <div class="chapter-title">The 8 Most Common Mistakes</div>
+        <div class="chapter-description">The most frequent errors Carol finds in homes of atypical children — and exactly how to fix each one, simply and affordably.</div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-number">Chapter 5</div>
+        <div class="chapter-title">3 Real Family Transformations</div>
+        <div class="chapter-description">Before and after cases from real families who applied sensory architecture at home — and the results they saw in weeks, not months.</div>
+      </li>
+    </ul>
+    <div class="modal-footer">
+      <p>Instant access after purchase. Read on any device, as many times as you want.</p>
+      <a href="https://pay.kiwify.com/xVIRZ82" class="btn-modal-buy">Get the e-book 📖</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="https://influmae.com" class="nav-logo">influ<span>mae</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#inside">Inside</a>
+    <a href="#price">Get it</a>
+    <a href="https://pay.kiwify.com/xVIRZ82" class="nav-cta">Buy now 📖</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow fade-up">Sensory Architecture E-book</div>
+    <div class="harvard-badge fade-up">🎓 Harvard Early Intervention Specialist</div>
+    <h1 class="fade-up-2">
+      What if home was<br>
+      <em>the answer?</em>
+    </h1>
+    <p class="hero-sub fade-up-3">
+      The space where your child lives does something to them every single day — helping or hurting. There is no neutral. This is the complete sensory architecture guide for moms of atypical children.
+    </p>
+    <div class="hero-highlight fade-up-3">
+      <strong>By Carol Anelhe</strong> — sensory architect, Harvard early intervention student, and mom of a child with autism and sensory processing disorder. Louisville, KY.
+    </div>
+    <div class="hero-actions fade-up-4">
+      <a href="https://pay.kiwify.com/xVIRZ82" class="btn-primary">Yes, I want this for my child 📖</a>
+      <button onclick="openChaptersModal()" class="btn-secondary">See what's inside →</button>
+    </div>
+    <p style="font-size:0.78rem;color:rgba(44,44,44,0.45);margin-top:1rem;" class="fade-up-4">🛡️ 30-day money-back guarantee · Instant access</p>
+  </div>
+
+  <div class="hero-visual fade-up-2">
+    <div class="ebook-cover">
+      <div class="ebook-cover-header">
+        <div class="ebook-icon">🏠</div>
+        <h2>What if home was<br><em>the answer?</em></h2>
+      </div>
+      <div class="ebook-cover-meta">
+        <p>By Carol Anelhe</p>
+        <p style="font-size:0.75rem;margin-top:0.5rem;opacity:0.8;">Sensory Architect | Harvard</p>
+      </div>
+      <span class="ebook-badge">📖 PDF E-book</span>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE -->
+<section class="content-section" id="inside">
+  <div class="content-text">
+    <div class="section-eyebrow">What you'll learn</div>
+    <h3>5 practical chapters that <em>transform</em> the home</h3>
+    <p>This e-book was built from real experience — Carol's journey with her son Noah, combined with what she learned in Harvard's early intervention program. Every chapter is practical, actionable, and focused on real results.</p>
+    <ul class="content-list">
+      <li><strong>Chapter 1:</strong> The Home Speaks — Why the environment matters more than you think</li>
+      <li><strong>Chapter 2:</strong> The 5 Senses at Home — How each sense is affected by the space</li>
+      <li><strong>Chapter 3:</strong> Room-by-Room Checklists — Bedroom, living room, bathroom, kitchen</li>
+      <li><strong>Chapter 4:</strong> The 8 Most Common Mistakes — And exactly how to fix them</li>
+      <li><strong>Chapter 5:</strong> 3 Real Transformations — Before and after from real families</li>
+    </ul>
+  </div>
+  <div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🧠</div>
+        <h4>Understand Sensory Processing</h4>
+        <p>Learn why your child behaves differently in different spaces and how the environment directly affects neurological development.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">✅</div>
+        <h4>Ready-to-Use Checklists</h4>
+        <p>Practical room-by-room lists you can start using today — no renovation, no big budget, no guesswork.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💡</div>
+        <h4>Simple, High-Impact Changes</h4>
+        <p>From switching a light bulb to rearranging a room — small adjustments that create real, lasting change.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">👨‍👩‍👦</div>
+        <h4>Real Family Stories</h4>
+        <p>See how other families applied sensory architecture and the results they saw — in weeks, not months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL / CAROL STORY -->
+<section class="testimonial-section" id="about">
+  <div class="testimonial-text">
+    <blockquote>
+      "In 4 months, Noah started talking. He began trying new foods. He could leave the house without falling apart. He went to school. I cried out of relief."
+    </blockquote>
+    <div class="testimonial-author">
+      — <strong>Carol Anelhe</strong>, sensory architect and atypical mom
+    </div>
+    <div class="testimonial-result">
+      <strong>What changed:</strong> When Carol applied sensory architecture principles inside her own home, Noah's development accelerated significantly. The environment became part of the treatment — not just a backdrop.
+    </div>
+  </div>
+  <div class="testimonial-img">
+    <img src="carol2.jpg" alt="Carol Anelhe with her son Noah">
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-eyebrow">What moms are saying</div>
+    <h2 class="section-title">Real results from <em>real families</em></h2>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"I changed the light bulb in my son's room on Monday. By Thursday he was falling asleep 40 minutes faster. I couldn't believe it was that simple."</p>
+        <div class="depo-autor">Mom of Theo, 4 years old</div>
+        <div class="depo-tag">ASD · bedroom adaptation</div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"Bath time used to be a 40-minute meltdown every single day. After three changes in the bathroom, it now takes 15 minutes — calmly."</p>
+        <div class="depo-autor">Mom of Luna, 6 years old</div>
+        <div class="depo-tag">ADHD + hypersensitivity · bathroom</div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-text">"He came and sat next to me while I was watching TV. We stayed there for an hour together. I cried. It felt impossible before."</p>
+        <div class="depo-autor">Mom of Pedro, 5 years old</div>
+        <div class="depo-tag">ASD · living room adaptation</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.8rem;color:rgba(44,44,44,0.4);font-style:italic;margin-top:1.5rem;">* Names changed to protect privacy. Real cases from families supported by Carol Anelhe.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="price" style="background:var(--bg);text-align:center;padding:6rem 4rem;">
+  <div class="section-eyebrow" style="justify-content:center;">Instant Access</div>
+  <h2 class="section-title">Invest in your child's environment</h2>
+  <p class="section-sub" style="margin:0 auto 2rem;">Full e-book access the moment you purchase. Read on any device, as many times as you want.</p>
+
+  <div class="pricing-card">
+    <div class="pricing-icon">📖</div>
+
+    <!-- URGÊNCIA -->
+    <div style="background:rgba(232,184,75,0.15);border:1px solid var(--yellow);border-radius:10px;padding:0.8rem 1.2rem;margin-bottom:1.5rem;font-size:0.88rem;color:rgba(44,44,44,0.85);">
+      🔥 <strong>Launch Price — Limited Time.</strong> Regular price is $59.99. Get it now while it's $34.99.
+    </div>
+
+    <h3 class="pricing-title">What If Home Was the Answer?</h3>
+    <p class="pricing-description">The complete sensory architecture guide for moms of atypical children — autism, ADHD, SPD, and related conditions.</p>
+
+    <!-- ÂNCORA DE PREÇO -->
+    <div style="text-align:center;margin-bottom:0.4rem;">
+      <span style="font-size:1rem;color:#999;text-decoration:line-through;font-family:inherit;">$59.99</span>
+    </div>
+    <div class="pricing-price">$34.99</div>
+    <p class="pricing-price-note">one-time purchase · instant PDF access · launch price</p>
+
+    <ul class="pricing-features">
+      <li>5 practical, actionable chapters</li>
+      <li>Room-by-room checklists (bedroom, living room, bathroom, kitchen)</li>
+      <li>The 8 most common home mistakes and how to fix them</li>
+      <li>3 real family before and after stories</li>
+      <li>Lifetime access to the content</li>
+      <li>Email support</li>
+    </ul>
+
+    <!-- GARANTIA -->
+    <div style="background:rgba(122,158,138,0.1);border:1px solid rgba(122,158,138,0.3);border-radius:12px;padding:1.2rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:1rem;text-align:left;">
+      <span style="font-size:2rem;flex-shrink:0;">🛡️</span>
+      <div>
+        <div style="font-weight:500;color:var(--dark);font-size:0.95rem;margin-bottom:0.3rem;">30-Day Money-Back Guarantee</div>
+        <div style="font-size:0.82rem;color:rgba(44,44,44,0.7);line-height:1.6;">If you read the e-book and don't feel it was worth every penny, email us within 30 days and we'll refund you. No questions asked.</div>
+      </div>
+    </div>
+
+    <!-- BOTÃO COM TRANSFORMAÇÃO -->
+    <a href="https://pay.kiwify.com/xVIRZ82" class="btn-buy">Yes, I want this for my child 📖</a>
+
+    <!-- QUEBRA DE OBJEÇÃO PÓS-BOTÃO -->
+    <p style="font-size:0.8rem;color:rgba(44,44,44,0.5);margin-top:1rem;">Most moms notice a difference in the first week.</p>
+
+    <!-- SELOS DE SEGURANÇA -->
+    <div style="display:flex;justify-content:center;align-items:center;gap:1.2rem;margin-top:1.2rem;flex-wrap:wrap;">
+      <span style="font-size:0.75rem;color:rgba(44,44,44,0.45);display:flex;align-items:center;gap:0.3rem;">🔒 Secure checkout</span>
+      <span style="font-size:0.75rem;color:rgba(44,44,44,0.45);display:flex;align-items:center;gap:0.3rem;">📧 Instant delivery</span>
+      <span style="font-size:0.75rem;color:rgba(44,44,44,0.45);display:flex;align-items:center;gap:0.3rem;">💳 Credit card · PayPal · Pix</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT AUTHOR -->
+<section class="about-author">
+  <div class="author-text">
+    <div class="section-eyebrow">Who is Carol Anelhe</div>
+    <h3>Sensory architect, atypical mom, and Harvard early intervention specialist</h3>
+    <p>Carol grew up in Rio de Janeiro, started working at 16, and never stopped. Her path took her through a COVID recovery — during which she couldn't walk for months — all the way to Harvard, where she studied Early Childhood Development and early intervention in autism.</p>
+    <p>When her son Noah was born premature and later diagnosed with sensory processing disorder and autism, Carol did what she always does: she went all in. She studied, applied everything inside their home, and saw results in 4 months that no one expected.</p>
+    <p>Today she turns the knowledge she gained at Harvard — and the hard-won experience of being an atypical mom — into practical tools so no other mom has to figure this out alone.</p>
+    <div class="author-credentials">
+      <span class="credential">🎓 Harvard — ECD</span>
+      <span class="credential">🏠 Sensory Architect</span>
+      <span class="credential">🐧 Atypical Mom</span>
+      <span class="credential">🇧🇷🇺🇸 Louisville, KY</span>
+    </div>
+  </div>
+  <div class="author-img">
+    <img src="carol.jpg" alt="Carol Anelhe">
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--cream);padding:6rem 4rem;">
+  <div style="max-width:720px;margin:0 auto;">
+    <div class="section-eyebrow">Questions</div>
+    <h2 class="section-title">Everything you need <em>to know</em></h2>
+    <div style="margin-top:2.5rem;display:flex;flex-direction:column;gap:0.8rem;" id="faq-list">
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">Is this e-book for my child's specific diagnosis? <span>+</span></button>
+        <div class="faq-a">Yes. The e-book covers autism (ASD), ADHD, sensory processing disorder, and related conditions. The principles of sensory architecture apply across the spectrum — you'll find guidance relevant to your child's specific sensitivities.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">Do I need to renovate my home? <span>+</span></button>
+        <div class="faq-a">Not at all. Most changes in this e-book cost under $20 and take less than an hour. Switching a light bulb, repositioning furniture, changing a bedsheet texture — small adjustments, real impact.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">How is this different from what I find for free online? <span>+</span></button>
+        <div class="faq-a">Free content gives you general tips. This e-book gives you a complete, room-by-room system built on Harvard early intervention research and Carol's real experience as a sensory architect and mom of a child with autism. It's the difference between a random tip and an actual plan.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">How quickly will I receive the e-book? <span>+</span></button>
+        <div class="faq-a">Instantly. The moment your payment is confirmed, you'll receive an email with your download link. You can start reading in minutes.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">What if I'm not satisfied? <span>+</span></button>
+        <div class="faq-a">We offer a full 30-day money-back guarantee. If you read the e-book and don't feel it was worth every penny, email us and we'll refund you completely. No questions asked.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">My child doesn't have a diagnosis yet. Is this still for me? <span>+</span></button>
+        <div class="faq-a">Absolutely. Many families start applying sensory architecture before a formal diagnosis — and often see results that help clarify what their child actually needs. If you suspect sensory sensitivities, this guide will help you.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section style="padding:0 4rem;">
+  <div class="cta-final">
+    <h2>No mom should have to figure this out <em>alone</em></h2>
+    <p>The home is already doing something to your child every day. This e-book teaches you what — and exactly what to change. Start today.</p>
+    <a href="https://pay.kiwify.com/xVIRZ82" class="btn-cta-final">Start transforming our home today 📖</a>
+    <p style="margin-top:1rem;font-size:0.82rem;opacity:0.6;">🛡️ 30-day money-back guarantee · Instant access</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">influ<span>mae</span></div>
+  <div class="footer-links">
+    <a href="https://influmae.com">Back to site</a>
+    <a href="https://www.instagram.com/influmae" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/share/g/18XDg41bk4/" target="_blank">Community</a>
+  </div>
+  <div class="footer-copy">© 2026 influmae · Carol Anelhe · Sensory Architecture</div>
+</footer>
+
+<script>
+  function openChaptersModal() {
+    document.getElementById('chaptersModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeChaptersModal() {
+    document.getElementById('chaptersModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  window.onclick = function(event) {
+    const modal = document.getElementById('chaptersModal');
+    if (event.target === modal) closeChaptersModal();
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeChaptersModal();
+  });
+  function toggleFaq(item) {
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(el) { el.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
