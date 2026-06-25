@@ -203,7 +203,6 @@
   }
   .hero-photo-placeholder .penguin-icon { font-size: 4rem; }
   .hero-photo-placeholder p { font-style: italic; }
-  /* QUANDO TIVER FOTO: substitua o placeholder por <img src="carol.jpg" style="width:100%;height:100%;object-fit:cover"> */
 
   .hero-float-card {
     position: absolute;
@@ -406,31 +405,26 @@
   .colonia-item-icon { font-size: 1.5rem; flex-shrink: 0; }
   .colonia-item-text h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.25rem; color: var(--white); }
   .colonia-item-text p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
-  .colonia-preco-box {
+  .colonia-cta-box {
     background: rgba(122,158,138,0.2);
     border: 1px solid rgba(122,158,138,0.4);
     border-radius: 20px;
     padding: 2rem;
   }
-  .colonia-preco-box .preco-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
-  .colonia-preco-box .preco { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: var(--white); line-height: 1; }
-  .colonia-preco-box .preco-per { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
-  .colonia-preco-box .bonus-tag {
-    display: inline-flex; align-items: center; gap: 0.4rem;
+  .colonia-cta-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
+  .colonia-cta-text { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--white); line-height: 1.3; margin-bottom: 1.5rem; }
+  .colonia-cta-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
     background: var(--yellow);
     color: var(--dark);
-    font-size: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 3rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    padding: 0.4rem 1rem;
-    border-radius: 2rem;
-    margin-bottom: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .colonia-preco-box .sorteio-note {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.5);
-    margin-top: 1rem;
-    line-height: 1.6;
-  }
+  .colonia-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,184,75,0.3); }
 
   /* ===== COMO FUNCIONA ===== */
   .como-funciona { background: var(--cream); }
@@ -458,47 +452,39 @@
   .step h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; }
   .step p { font-size: 0.85rem; color: rgba(44,44,44,0.7); line-height: 1.7; }
 
-  /* ===== DEPOIMENTOS PLACEHOLDER ===== */
-  .depoimentos { background: var(--bg); }
+  /* ===== DEPOIMENTOS ===== */
+  .depoimentos { background: var(--white); }
   .depoimentos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     margin-top: 3rem;
   }
   .depoimento-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 1.8rem;
-    border: 1px solid rgba(44,44,44,0.06);
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid rgba(44,44,44,0.08);
   }
-  .depoimento-stars { color: var(--yellow); font-size: 0.9rem; margin-bottom: 0.8rem; }
-  .depoimento-text { font-size: 0.88rem; line-height: 1.8; color: rgba(44,44,44,0.8); margin-bottom: 1.2rem; font-style: italic; }
-  .depoimento-autor { font-size: 0.78rem; font-weight: 500; color: var(--dark); }
-  .depoimento-tag { font-size: 0.72rem; color: rgba(44,44,44,0.45); }
-  .depoimentos-note {
-    text-align: center;
-    font-size: 0.8rem;
-    color: rgba(44,44,44,0.4);
-    font-style: italic;
-    margin-top: 1.5rem;
-  }
+  .depoimento-stars { font-size: 0.9rem; color: var(--yellow); margin-bottom: 1rem; letter-spacing: 0.1em; }
+  .depoimento-text { font-size: 0.95rem; color: rgba(44,44,44,0.8); line-height: 1.8; margin-bottom: 1.2rem; font-style: italic; }
+  .depoimento-autor { font-size: 0.85rem; font-weight: 500; color: var(--dark); margin-bottom: 0.5rem; }
+  .depoimento-tag { font-size: 0.75rem; color: var(--green); font-weight: 400; }
+  .depoimentos-note { font-size: 0.8rem; color: rgba(44,44,44,0.5); margin-top: 2rem; text-align: center; }
 
   /* ===== CTA FINAL ===== */
   .cta-final {
-    background: var(--green-deep);
+    background: var(--dark);
     color: var(--white);
+    padding: 6rem 4rem;
     text-align: center;
-    padding: 8rem 4rem;
   }
-  .cta-final .penguin { font-size: 4rem; margin-bottom: 1.5rem; }
+  .cta-final .penguin { font-size: 4rem; margin-bottom: 1rem; }
   .cta-final h2 {
     font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: 300;
-    line-height: 1.2;
     margin-bottom: 1.2rem;
-    color: var(--white);
   }
   .cta-final h2 em { font-style: italic; color: var(--yellow); }
   .cta-final p { color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto 2.5rem; font-size: 1rem; line-height: 1.8; }
@@ -569,33 +555,33 @@
     <a href="#sobre">Sobre</a>
     <a href="#o-que-e">A Colônia</a>
     <a href="#produtos">Produtos</a>
-    <a href="https://pay.kiwify.com.br/F4G6zu3" class="nav-cta">Comprar e-book 📖</a>
+    <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="nav-cta">Entrar no grupo 🐧</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-eyebrow fade-up">🐧 Pré-lançamento exclusivo — Colônia Mães de Pinguins</div>
+    <div class="hero-eyebrow fade-up">📖 E-book: Guia Completo de Arquitetura Sensorial</div>
     <h1 class="fade-up-2">
-      Nenhuma mãe fica<br>
-      <em>sozinha no frio.</em>
+      E se a casa fosse<br>
+      <em>a resposta?</em>
     </h1>
     <p class="hero-sub fade-up-3">
-      O espaço onde seu filho vive faz algo com ele todos os dias — ajudando ou atrapalhando. Não tem neutro. Por Carol Anelhe, arquiteta sensorial, mãe atípica e cursando Harvard em intervenção precoce em TEA.
+      O ambiente onde seu filho vive faz algo com ele todos os dias — ajudando ou atrapalhando. Não tem neutro. Descubra como transformar cada cômodo em uma ferramenta de desenvolvimento.
     </p>
     <div class="hero-badges fade-up-3">
-      <span class="badge badge-green">🏠 Sorteio Ninho Sensorial R$5.000</span>
-      <span class="badge badge-green">📦 Curadoria semanal de produtos</span>
-      <span class="badge badge-green">🎓 Harvard toda semana</span>
+      <span class="badge badge-green">📚 5 capítulos práticos</span>
+      <span class="badge badge-green">✓ Checklist por cômodo</span>
+      <span class="badge badge-green">📊 3 casos reais de transformação</span>
     </div>
     <div style="background:rgba(232,184,75,0.15);border:1px solid #E8B84B;border-radius:16px;padding:1rem 1.4rem;margin-bottom:1.8rem;" class="fade-up-3">
-      <div style="font-size:0.75rem;color:#8a6800;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem;">⏳ Lista VIP — desconto exclusivo</div>
-      <div style="font-size:0.9rem;color:rgba(44,44,44,0.75);line-height:1.6;">Quem se cadastrar antes da abertura recebe condição especial de lançamento. Planos mensais, semestrais e anuais — quanto mais tempo na Colônia, mais chances no sorteio.</div>
+      <div style="font-size:0.75rem;color:#8a6800;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem;">🎁 Cupom SEGUIDORAINFLUMAE</div>
+      <div style="font-size:0.9rem;color:rgba(44,44,44,0.75);line-height:1.6;">Ganhe 15% de desconto no e-book. Acesso imediato após a compra.</div>
     </div>
     <div class="hero-actions fade-up-4">
-      <a href="#colonia" class="btn-primary">Garantir meu lugar VIP 🐧</a>
-      <a href="#o-que-e" class="btn-secondary">O que é a Colônia? →</a>
+      <a href="https://pay.kiwify.com.br/F4G6zu3" class="btn-primary">Quero o e-book agora 📖</a>
+      <a href="#colonia" class="btn-secondary">Entrar no grupo gratuito →</a>
     </div>
   </div>
 
@@ -605,7 +591,7 @@
     </div>
     <div class="hero-float-card">
       <img src="logoinstagram.png" style="width:24px;height:24px;object-fit:contain;display:block;margin-bottom:0.4rem;">
-      <div class="stat">10k</div>
+      <div class="stat">10.6k</div>
       <div class="stat-label">seguidoras no Instagram</div>
     </div>
     <div class="hero-float-card2">
@@ -642,64 +628,66 @@
 <section class="produtos" id="produtos">
   <div class="produtos-header">
     <div class="section-eyebrow">Produtos</div>
-    <h2 class="section-title">Do primeiro passo ao <em>ambiente completo</em></h2>
-    <p class="section-sub">Cada produto foi pensado para um momento diferente da sua jornada. Começa de onde você está.</p>
+    <h2 class="section-title">Comece por <em>onde faz sentido</em></h2>
+    <p class="section-sub">O e-book é seu guia. A Colônia é sua comunidade. Juntos, transformam ambientes e vidas.</p>
   </div>
 
   <div class="produtos-grid">
 
-    <!-- E-BOOK -->
-    <div class="produto-card destaque">
-      <div class="produto-tag">Disponível agora</div>
+    <!-- E-BOOK (DESTAQUE PRINCIPAL) -->
+    <div class="produto-card destaque" style="order: -1;">
+      <div class="produto-tag">Produto Principal</div>
       <div class="produto-icon">📖</div>
       <h3>E se a casa fosse a resposta?</h3>
       <p>O guia completo de arquitetura sensorial para mães de crianças atípicas. Checklists por cômodo, os 8 erros mais comuns e 3 transformações reais de famílias.</p>
       <div class="produto-price">R$ 59,90</div>
       <div class="produto-price-note" style="margin-bottom:0.5rem;">acesso imediato após a compra</div>
-      <div style="display:inline-block;background:rgba(122,158,138,0.15);border:1px solid var(--green);border-radius:2rem;padding:0.3rem 0.9rem;font-size:0.78rem;color:var(--green-dark);margin-bottom:1rem;">
-        🎁 Use o cupom <strong>SEGUIDORAINFLUMAE</strong> e ganhe desconto
+      <div style="display:inline-block;background:rgba(232,184,75,0.15);border:1px solid #E8B84B;border-radius:2rem;padding:0.3rem 0.9rem;font-size:0.78rem;color:#8a6800;margin-bottom:1rem;">
+        🎁 Use o cupom <strong>SEGUIDORAINFLUMAE</strong> (15% desconto)
       </div>
       <ul class="produto-benefits">
         <li>5 capítulos práticos</li>
         <li>Checklist por cômodo</li>
         <li>Os 8 erros mais comuns</li>
-        <li>3 casos reais de antes e depois</li>
+        <li>3 casos reais de transformação</li>
       </ul>
-      <!-- SUBSTITUIR O HREF PELO LINK DA KIWIFY -->
       <a href="https://pay.kiwify.com.br/F4G6zu3" class="btn-produto green">Quero o e-book →</a>
     </div>
 
-    <!-- COLÔNIA -->
+    <!-- COLÔNIA (GRATUITA) -->
     <div class="produto-card destaque">
-      <div class="produto-tag" style="background:var(--yellow);color:var(--dark);">⏳ Abre essa semana</div>
+      <div class="produto-tag" style="background:var(--yellow);color:var(--dark);">Gratuito</div>
       <div class="produto-icon">🐧</div>
-      <h3>A Colônia</h3>
-      <p>O grupo onde nenhuma mãe fica sozinha no frio. Curadoria semanal, Harvard toda semana e sorteio do Ninho Sensorial a cada 45 dias. Planos mensais, semestrais e anuais — quanto mais tempo, mais chances no sorteio.</p>
-      <div class="produto-price" style="font-size:1.3rem;margin-bottom:0.2rem;">A partir de R$ 24,90<span style="font-size:0.9rem;font-weight:300;">/mês</span></div>
-      <div class="produto-price-note">lista VIP garante desconto exclusivo de lançamento</div>
+      <h3>A Colônia — Mães de Pinguins</h3>
+      <p>Nenhuma mãe fica sozinha no frio. Curadoria semanal, conteúdo exclusivo de Harvard e sorteio do Ninho Sensorial a cada 45 dias. Membras ativas ganham mais chances.</p>
+      <div class="produto-price" style="font-size:1.3rem;margin-bottom:0.2rem;">Gratuito<span style="font-size:0.9rem;font-weight:300;"></span></div>
+      <div class="produto-price-note">Acesso imediato ao grupo de WhatsApp</div>
       <ul class="produto-benefits">
-        <li>E-book de brinde na entrada (automático)</li>
         <li>Curadoria semanal com links diretos</li>
         <li>Conteúdo exclusivo de Harvard</li>
         <li>Sorteio do Ninho Sensorial a cada 45 dias</li>
-        <li>Anual tem mais chances no sorteio que mensal</li>
+        <li>Membras ativas têm mais chances</li>
+        <li>Comunidade de apoio real</li>
       </ul>
-      <a href="#colonia" class="btn-produto green">Garantir meu lugar VIP 🐧</a>
+      <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="btn-produto green">Entrar no grupo agora 🐧</a>
     </div>
 
-    <!-- MINI-CURSO -->
+    <!-- PARA PROFISSIONAIS -->
     <div class="produto-card">
-      <div class="produto-icon">🎓</div>
-      <h3>Mini-curso</h3>
-      <p>Aplicabilidade de Intervenção Precoce nos Cômodos da Casa. 5 aulas práticas de 10 a 15 minutos — quarto, sala, banheiro, e a casa inteira.</p>
-      <div class="produto-price-note" style="margin-top:0.5rem;">Em breve</div>
+      <div class="produto-icon">🏥</div>
+      <h3>Para profissionais de saúde</h3>
+      <p>Arquitetura Sensorial para ambientes terapêuticos. Transforme sua clínica ou consultório em uma ferramenta de tratamento poderosa.</p>
+      <div class="produto-price-note" style="margin-top:0.5rem;">Consultoria Especializada</div>
       <ul class="produto-benefits">
-        <li>5 aulas práticas de 10–15 min</li>
-        <li>Um cômodo por aula</li>
-        <li>Materiais de apoio inclusos</li>
-        <li>Desconto para membras da Colônia</li>
+        <li>Diagnóstico do espaço clínico</li>
+        <li>Plano de implementação sensorial</li>
+        <li>Treinamento para sua equipe</li>
+        <li>Foco em resultados terapêuticos</li>
       </ul>
-      <a href="#" class="btn-produto outline" onclick="abrirListaEspera('Mini-curso'); return false;" style="cursor:pointer;opacity:1;">Entrar na lista de espera →</a>
+      <div style="display:flex; flex-direction:column; gap:0.8rem;">
+        <a href="https://wa.me/5521967060990?text=Olá,%20quero%20saber%20mais%20sobre%20a%20consultoria%20para%20profissionais%20da%20saúde." class="btn-produto green" target="_blank">Falar com a Carol 📱</a>
+        <a href="https://www.influmae.com/ambientesterapeuticos" class="btn-produto outline">Conhecer o projeto →</a>
+      </div>
     </div>
 
     <!-- NINHO SENSORIAL -->
@@ -727,7 +715,7 @@
   </div>
   <div style="position:relative;z-index:1;">
     <div class="section-eyebrow">A Colônia — Mães de Pinguins</div>
-    <h2 class="section-title" style="color:white">Abre essa semana: <em style="color:#E8B84B">entre na lista VIP agora</em></h2>
+    <h2 class="section-title" style="color:white">Nenhuma mãe fica <em style="color:#E8B84B">sozinha no frio</em></h2>
     <p class="section-sub">O pinguim-imperador vive em -60 graus e ainda assim cria seus filhotes. Sabe como? Ele se junta à colônia. As que estão do lado de fora vão pro centro. As do centro vão pra fora. Ninguém fica sozinha por muito tempo.</p>
     <div class="colonia-items">
       <div class="colonia-item">
@@ -747,72 +735,27 @@
       <div class="colonia-item">
         <div class="colonia-item-icon">🏠</div>
         <div class="colonia-item-text">
-          <h4>Chamado da Colônia — sorteio a cada 45 dias</h4>
-          <p>Projeto Ninho Sensorial completo (R$5.000) sorteado entre as membras ativas. Quanto mais tempo na Colônia, mais chances: anual &gt; semestral &gt; mensal.</p>
+          <h4>Sorteio do Ninho Sensorial a cada 45 dias</h4>
+          <p>Projeto completo (R$5.000) sorteado entre as membras ativas. Quanto mais tempo na Colônia, mais chances você tem.</p>
         </div>
       </div>
       <div class="colonia-item">
         <div class="colonia-item-icon">📖</div>
         <div class="colonia-item-text">
-          <h4>E-book de brinde na entrada</h4>
-          <p>"E se a casa fosse a resposta?" — entregue automaticamente assim que você entrar.</p>
+          <h4>Comunidade de apoio real</h4>
+          <p>Mães que entendem, que já passaram, que estão passando. Histórias, dúvidas, vitórias compartilhadas todo dia.</p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- PLANOS -->
-    <div style="margin-top:2rem;">
-      <div style="font-size:0.75rem;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem;">Planos disponíveis no lançamento</div>
-      <div style="display:flex;flex-direction:column;gap:0.6rem;">
-        <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.9rem 1.2rem;">
-          <div>
-            <span style="font-size:0.9rem;color:#fff;font-weight:500;">Mensal</span>
-            <span style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-left:0.6rem;">1 chance/sorteio</span>
-          </div>
-          <span style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;">R$ 24,90<span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">/mês</span></span>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:0.9rem 1.2rem;">
-          <div>
-            <span style="font-size:0.9rem;color:#fff;font-weight:500;">Semestral</span>
-            <span style="font-size:0.75rem;color:rgba(255,255,255,0.45);margin-left:0.6rem;">2 chances/sorteio</span>
-          </div>
-          <div style="text-align:right;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#fff;">R$ 124,90 <span style="font-size:0.8rem;color:rgba(255,255,255,0.5);">à vista</span></div>
-            <div style="font-size:0.75rem;color:rgba(255,255,255,0.45);">ou 6x R$ 22,90</div>
-          </div>
-        </div>
-        <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(232,184,75,0.12);border:1px solid rgba(232,184,75,0.4);border-radius:12px;padding:0.9rem 1.2rem;">
-          <div>
-            <span style="font-size:0.9rem;color:#E8B84B;font-weight:500;">Anual ⭐</span>
-            <span style="font-size:0.75rem;color:rgba(232,184,75,0.7);margin-left:0.6rem;">3 chances/sorteio</span>
-          </div>
-          <div style="text-align:right;">
-            <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#E8B84B;">R$ 224,90 <span style="font-size:0.8rem;color:rgba(232,184,75,0.6);">à vista</span></div>
-            <div style="font-size:0.75rem;color:rgba(232,184,75,0.6);">ou 12x R$ 20,90</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- fecha z-index:1 wrapper -->
-
-  <div class="colonia-preco-box" style="position:relative;z-index:2;">
-    <div class="preco-label">⏳ Abre essa semana — lista VIP</div>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(255,255,255,0.9);margin-bottom:0.4rem;font-style:italic;">Garanta desconto exclusivo<br>de lançamento</div>
-    <div class="bonus-tag">🏠 Mais tempo = mais chances no sorteio de R$5.000</div>
-    <form onsubmit="enviarListaEsperaColonia(event)" style="display:flex;flex-direction:column;gap:0.7rem;margin-top:1rem;">
-      <input type="text" id="colonia-nome" placeholder="Seu nome" required style="padding:0.8rem 1rem;border:none;border-radius:2rem;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.15);color:#fff;outline:none;" onfocus="this.style.background='rgba(255,255,255,0.25)'" onblur="this.style.background='rgba(255,255,255,0.15)'">
-      <input type="email" id="colonia-email" placeholder="Seu melhor e-mail" required style="padding:0.8rem 1rem;border:none;border-radius:2rem;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.15);color:#fff;outline:none;" onfocus="this.style.background='rgba(255,255,255,0.25)'" onblur="this.style.background='rgba(255,255,255,0.15)'">
-      <input type="tel" id="colonia-whatsapp" placeholder="WhatsApp com DDD (ex: 11999999999)" required style="padding:0.8rem 1rem;border:none;border-radius:2rem;font-size:0.9rem;font-family:inherit;background:rgba(255,255,255,0.15);color:#fff;outline:none;" onfocus="this.style.background='rgba(255,255,255,0.25)'" onblur="this.style.background='rgba(255,255,255,0.15)'">
-      <button type="submit" id="colonia-btn" style="background:#E8B84B;color:#2C2C2C;border:none;padding:1rem;border-radius:2rem;font-size:0.9rem;font-weight:500;cursor:pointer;font-family:inherit;transition:background 0.2s;">
-        Quero meu desconto VIP 🐧
-      </button>
-    </form>
-    <div id="colonia-sucesso" style="display:none;text-align:center;padding:1rem 0;">
-      <div style="font-size:2rem;margin-bottom:0.5rem;">🐧</div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#fff;">Pronto! Você está na lista VIP.</p>
-      <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);margin-top:0.4rem;">Assim que a Colônia abrir você recebe o link com desconto exclusivo.</p>
-    </div>
-    <p class="sorteio-note">🔒 Seus dados ficam só com a Carol. Sem spam, só o que importa.</p>
+  <div class="colonia-cta-box" style="position:relative;z-index:2;">
+    <div class="colonia-cta-label">🐧 Pronto para entrar?</div>
+    <div class="colonia-cta-text">Acesso gratuito ao grupo de WhatsApp</div>
+    <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="colonia-cta-btn">
+      Entrar na Colônia agora →
+    </a>
+    <p style="margin-top:1.5rem;font-size:0.85rem;color:rgba(255,255,255,0.6);">🔒 Seus dados ficam só com a Carol. Sem spam, só o que importa.</p>
   </div>
 </section>
 
@@ -856,8 +799,8 @@
         <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);"></div>
         <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--yellow);line-height:1;margin-bottom:0.5rem;">4</div>
         <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:0.8rem;">Semana 4</div>
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:#fff;margin-bottom:0.4rem;">Chamado da Colônia 🏠</h4>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:0.8rem;">Sorteio do Ninho Sensorial + lembrete de renovação. Você já está participando.</p>
+        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:#fff;margin-bottom:0.4rem;">Sorteio do Ninho 🏠</h4>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:0.8rem;">Sorteio do Ninho Sensorial + celebração das vitórias das membras. Você já está participando.</p>
         <span style="font-size:0.72rem;background:rgba(232,184,75,0.2);color:var(--yellow);padding:0.25rem 0.7rem;border-radius:2rem;">🎯 Evento + automático</span>
       </div>
     </div>
@@ -917,25 +860,25 @@
     </div>
 
     <div style="margin-top:2.5rem;text-align:center;">
-      <a href="#colonia" class="btn-primary" style="display:inline-flex;">Quero entrar na lista VIP 🐧</a>
+      <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="btn-primary" style="display:inline-flex;">Entrar na Colônia agora 🐧</a>
     </div>
   </div>
 </section>
 
 <!-- COMO FUNCIONA -->
 <section class="como-funciona">
-  <div class="section-eyebrow">Como funciona</div>
-  <h2 class="section-title">Da entrada ao <em>ambiente transformado</em></h2>
+  <div class="section-eyebrow">Próximos passos</div>
+  <h2 class="section-title">Comece sua <em>transformação</em></h2>
   <div class="steps-grid">
     <div class="step">
       <div class="step-num">1</div>
-      <h4>Você entra na lista de espera</h4>
-      <p>Entra na lista de espera e seja uma das primeiras a saber quando a Colônia abrir. Quem espera tem condições especiais de lançamento.</p>
+      <h4>Leia o e-book</h4>
+      <p>Entenda os princípios de arquitetura sensorial com 5 capítulos práticos, checklists e casos reais de transformação.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <h4>Recebe curadoria toda semana</h4>
-      <p>Produtos testados, dicas práticas e o que Carol aprende em Harvard — tudo dentro do grupo do WhatsApp.</p>
+      <h4>Faça parte da Colônia</h4>
+      <p>Entre no grupo gratuito e receba curadoria semanal de produtos, conteúdo exclusivo de Harvard e uma comunidade que entende.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
@@ -944,8 +887,43 @@
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <h4>Ou vai fundo com o Ninho</h4>
-      <p>Quando quiser que Carol faça isso pela você, cômodo por cômodo, o Ninho Sensorial estará disponível em breve.</p>
+      <h4>Ou contrata o Ninho</h4>
+      <p>Quando quiser que Carol faça isso por você, cômodo por cômodo, o Ninho Sensorial oferece projeto completo com implementação.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROFISSIONAIS DE SAÚDE -->
+<section style="background:var(--cream);">
+  <div style="max-width:900px;margin:0 auto;">
+    <div class="section-eyebrow">Para profissionais de saúde</div>
+    <h2 class="section-title">Transforme seus <em>espaços terapêuticos</em></h2>
+    <p class="section-sub">Você trabalha com crianças neurodivergentes? Sabe aquele momento em que o ambiente faz toda a diferença? Quando a criança consegue se autorregular porque o espaço foi pensado para isso? Carol oferece consultoria especializada em arquitetura sensorial para clínicas, consultórios e centros de desenvolvimento.</p>
+    
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;margin-bottom:2.5rem;">
+      <div style="background:var(--white);border-radius:20px;padding:1.8rem;border:1px solid rgba(44,44,44,0.08);">
+        <div style="font-size:2rem;margin-bottom:1rem;">🏥</div>
+        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.5rem;">Diagnóstico Sensorial</h4>
+        <p style="font-size:0.85rem;color:rgba(44,44,44,0.7);line-height:1.7;">Análise completa do seu espaço + plano de implementação sensorial adaptado à sua realidade clínica. Identificamos os pontos de sobrecarga e as oportunidades de regulação.</p>
+      </div>
+      <div style="background:var(--white);border-radius:20px;padding:1.8rem;border:1px solid rgba(44,44,44,0.08);">
+        <div style="font-size:2rem;margin-bottom:1rem;">👥</div>
+        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.5rem;">Treinamento de Equipes</h4>
+        <p style="font-size:0.85rem;color:rgba(44,44,44,0.7);line-height:1.7;">Capacite sua equipe para reconhecer sinais de disregulação e aplicar princípios de arquitetura sensorial no dia a dia. Workshops práticos e materiais de referência inclusos.</p>
+      </div>
+      <div style="background:var(--white);border-radius:20px;padding:1.8rem;border:1px solid rgba(44,44,44,0.08);">
+        <div style="font-size:2rem;margin-bottom:1rem;">🎓</div>
+        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.5rem;">Consultoria Contínua</h4>
+        <p style="font-size:0.85rem;color:rgba(44,44,44,0.7);line-height:1.7;">Suporte especializado para implementação, ajustes conforme você aprende com seus pacientes, e estratégias para potencializar resultados terapêuticos através do ambiente.</p>
+      </div>
+    </div>
+    
+    <div style="text-align:center;">
+      <p style="font-size:0.95rem;color:rgba(44,44,44,0.75);margin-bottom:1.5rem;line-height:1.8;">Quer saber mais sobre como a arquitetura sensorial pode transformar seus espaços terapêuticos e potencializar o tratamento dos seus pacientes?</p>
+      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+        <a href="https://wa.me/5521967060990?text=Olá,%20quero%20saber%20mais%20sobre%20a%20consultoria%20para%20profissionais%20da%20saúde." class="btn-primary" style="display:inline-flex;background:var(--green);" target="_blank">Conversar com Carol 📱</a>
+        <a href="https://www.influmae.com/ambientesterapeuticos" class="btn-secondary" style="display:inline-flex;">Ver detalhes do projeto →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1039,32 +1017,6 @@
       body: JSON.stringify(dados)
     }).catch(function(err) {
       console.warn('Erro ao salvar na planilha, dado salvo apenas localmente.', err);
-    });
-  }
-
-  // ===== FORMULÁRIO DA COLÔNIA (seção principal) =====
-  function enviarListaEsperaColonia(e) {
-    e.preventDefault();
-    var btn = document.getElementById('colonia-btn');
-    btn.textContent = 'Enviando...';
-    btn.disabled = true;
-
-    var nome     = document.getElementById('colonia-nome').value.trim();
-    var email    = document.getElementById('colonia-email').value.trim();
-    var whatsapp = document.getElementById('colonia-whatsapp').value.trim();
-    var data     = new Date().toLocaleString('pt-BR', {timeZone:'America/New_York'});
-
-    var payload = { nome: nome, email: email, whatsapp: whatsapp, produto: 'Colônia — Mães de Pinguins', data: data };
-
-    // Salva no localStorage como backup
-    var lista = JSON.parse(localStorage.getItem('lista_espera_colonia') || '[]');
-    lista.push(payload);
-    localStorage.setItem('lista_espera_colonia', JSON.stringify(lista));
-
-    // Envia para o Google Sheets via Sheet.best
-    salvarNaPlanilha(payload).finally(function() {
-      document.querySelector('#colonia form').style.display = 'none';
-      document.getElementById('colonia-sucesso').style.display = 'block';
     });
   }
 
