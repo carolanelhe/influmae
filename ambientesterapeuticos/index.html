@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>influmae — Carol Anelhe | Arquitetura Sensorial</title>
-<meta name="description" content="Ambientes que acolhem, regulam e desenvolvem. Arquitetura Sensorial para crianças atípicas. Por Carol Anelhe — mãe atípica e especialista em Harvard.">
-<meta property="og:title" content="influmae — Arquitetura Sensorial para crianças atípicas">
-<meta property="og:description" content="E se a casa fosse a resposta? Conheça a Colônia — Mães de Pinguins.">
-<meta property="og:image" content="https://influmae.com/og.jpg">
+<title>Ambientes Terapêuticos — Arquitetura Sensorial para Profissionais | influmae</title>
+<meta name="description" content="Transforme seu consultório em um aliado terapêutico. Projetos especializados para profissionais que atendem crianças neurodivergentes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -15,13 +12,12 @@
   /* ===== RESET & BASE ===== */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #EDD9C8;
-    --bg-dark: #E2C9B4;
+    --bg: #F5EDE4; /* Bege base neutra */
+    --bg-dark: #EDD9C8;
     --green: #7A9E8A;
     --green-dark: #5C8070;
     --green-deep: #3D6054;
     --dark: #2C2C2C;
-    --cream: #F5EDE4;
     --yellow: #E8B84B;
     --white: #FDFAF7;
     --serif: 'Cormorant Garamond', Georgia, serif;
@@ -42,7 +38,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 1.2rem 2rem;
     display: flex; justify-content: space-between; align-items: center;
-    background: rgba(237, 217, 200, 0.92);
+    background: rgba(245, 237, 228, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(44,44,44,0.08);
   }
@@ -74,163 +70,71 @@
     border-radius: 2rem !important;
     opacity: 1 !important;
     font-size: 0.82rem !important;
-    transition: background 0.2s !important;
   }
-  .nav-cta:hover { background: var(--green-dark) !important; }
 
   /* ===== HERO ===== */
   .hero {
-    min-height: 100vh;
+    min-height: 90vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 7rem 4rem 4rem;
+    padding: 8rem 4rem 4rem;
     gap: 4rem;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
   }
-  .hero::before {
-    content: '';
-    position: absolute;
-    right: -120px; top: 50%;
-    transform: translateY(-50%);
-    width: 600px; height: 600px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(122,158,138,0.2) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-text { position: relative; z-index: 1; }
-  .hero-eyebrow {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--green);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
+  .hero-badge {
     display: inline-block;
-    width: 32px; height: 1px;
-    background: var(--green);
+    padding: 0.4rem 1rem;
+    background: rgba(122,158,138,0.1);
+    border: 1px solid var(--green);
+    color: var(--green-dark);
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
   }
   .hero h1 {
     font-family: var(--serif);
-    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 300;
     line-height: 1.1;
-    color: var(--dark);
     margin-bottom: 1.5rem;
   }
-  .hero h1 em {
-    font-style: italic;
-    color: var(--green-dark);
-  }
+  .hero h1 em { font-style: italic; color: var(--green-dark); }
   .hero-sub {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: rgba(44,44,44,0.75);
-    max-width: 480px;
+    font-size: 1.1rem;
+    color: rgba(44,44,44,0.8);
     margin-bottom: 2.5rem;
+    max-width: 520px;
   }
-  .hero-badges {
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-bottom: 2.5rem;
-  }
-  .badge {
-    font-size: 0.75rem;
-    font-weight: 400;
-    padding: 0.35rem 0.9rem;
-    border-radius: 2rem;
-    border: 1px solid rgba(44,44,44,0.2);
-    color: rgba(44,44,44,0.7);
-    letter-spacing: 0.03em;
-  }
-  .badge-green { background: rgba(122,158,138,0.15); border-color: var(--green); color: var(--green-dark); }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
+    display: inline-flex; align-items: center; gap: 0.6rem;
     background: var(--dark);
     color: var(--white);
-    padding: 1rem 2rem;
+    padding: 1.1rem 2.2rem;
     border-radius: 3rem;
-    font-size: 0.9rem;
-    font-weight: 400;
     text-decoration: none;
-    letter-spacing: 0.02em;
+    font-weight: 400;
     transition: transform 0.2s, background 0.2s;
   }
   .btn-primary:hover { transform: translateY(-2px); background: var(--green-deep); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent;
-    color: var(--dark);
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    border: 1px solid rgba(44,44,44,0.3);
-    font-size: 0.9rem;
-    font-weight: 400;
-    text-decoration: none;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--green); transform: translateY(-2px); }
-
-  /* Hero visual */
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
+  .hero-img-wrap {
     position: relative;
-  }
-  .hero-photo-wrap {
-    width: 300px; height: 380px; /* Reduzido em aproximadamente 30% */
-    border-radius: 60% 40% 55% 45% / 50% 50% 50% 50%;
-    background: var(--bg-dark);
+    border-radius: 40px;
     overflow: hidden;
-    position: relative;
-    border: 3px solid rgba(122,158,138,0.3);
+    width: 80%; /* Reduzindo a largura geral */
+    max-width: 400px; /* Limitando o tamanho máximo */
+    margin: 0 auto; /* Centralizando */
+    aspect-ratio: 4/5;
+    box-shadow: 0 32px 64px rgba(44,44,44,0.15);
   }
-  .hero-photo-placeholder {
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 1rem;
-    color: rgba(44,44,44,0.4);
-    font-size: 0.85rem;
-    text-align: center;
-    padding: 2rem;
-  }
-  .hero-photo-placeholder .penguin-icon { font-size: 4rem; }
-  .hero-photo-placeholder p { font-style: italic; }
-
-  .hero-float-card {
-    position: absolute;
-    bottom: -20px; left: -40px;
-    background: var(--white);
-    border-radius: 16px;
-    padding: 1rem 1.4rem;
-    box-shadow: 0 8px 32px rgba(44,44,44,0.12);
-    min-width: 200px;
-  }
-  .hero-float-card .stat { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--dark); }
-  .hero-float-card .stat-label { font-size: 0.75rem; color: rgba(44,44,44,0.6); }
-  .hero-float-card2 {
-    position: absolute;
-    top: 30px; right: -30px;
-    background: var(--green);
-    border-radius: 16px;
-    padding: 0.9rem 1.2rem;
-    color: var(--white);
-    font-size: 0.78rem;
-    max-width: 160px;
-    text-align: center;
-    line-height: 1.4;
-  }
-  .hero-float-card2 strong { display: block; font-size: 1.1rem; font-family: var(--serif); margin-bottom: 0.2rem; }
+  .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
   /* ===== SECTION BASE ===== */
-  section { padding: 6rem 4rem; }
+  section { padding: 8rem 4rem; }
   .section-eyebrow {
     font-size: 0.75rem;
     font-weight: 500;
@@ -243,306 +147,170 @@
   .section-eyebrow::before { content:''; width:24px; height:1px; background:var(--green); }
   .section-title {
     font-family: var(--serif);
-    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
     font-weight: 300;
     line-height: 1.2;
-    margin-bottom: 1.2rem;
-  }
-  .section-title em { font-style: italic; color: var(--green-dark); }
-  .section-sub {
-    font-size: 1rem;
-    color: rgba(44,44,44,0.7);
-    max-width: 560px;
-    line-height: 1.8;
-  }
-
-  /* ===== SOBRE ===== */
-  .about {
-    background: var(--cream);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-  .about-quote {
-    font-family: var(--serif);
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.3;
-    color: var(--dark);
-    border-left: 3px solid var(--green);
-    padding-left: 2rem;
     margin-bottom: 2rem;
   }
-  .about-text p { margin-bottom: 1.2rem; font-size: 0.95rem; color: rgba(44,44,44,0.8); line-height: 1.9; }
-  .about-credentials {
-    display: flex; flex-wrap: wrap; gap: 0.8rem;
-    margin-top: 2rem;
-  }
-  .credential {
-    display: flex; align-items: center; gap: 0.5rem;
-    background: var(--white);
-    border-radius: 2rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-    font-weight: 400;
-    color: var(--dark);
-    border: 1px solid rgba(44,44,44,0.1);
-  }
-  .credential-icon { font-size: 1rem; }
-  .about-img {
-    width: 100%;
-    aspect-ratio: 4/5;
-    border-radius: 40px;
-    background: var(--bg-dark);
-    overflow: hidden;
-    display: flex; align-items: center; justify-content: center;
-    color: rgba(44,44,44,0.3);
-    font-size: 0.8rem;
-    text-align: center;
-    padding: 2rem;
-    border: 2px solid rgba(122,158,138,0.2);
-  }
+  .section-title em { font-style: italic; color: var(--green-dark); }
 
-  /* ===== PRODUTOS ===== */
-  .produtos { background: var(--bg); }
-  .produtos-header { max-width: 640px; margin-bottom: 4rem; }
-  .produtos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-  .produto-card {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 2rem;
-    border: 1px solid rgba(44,44,44,0.06);
-    transition: transform 0.25s, box-shadow 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-  .produto-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(44,44,44,0.1); }
-  .produto-card.destaque { border: 2px solid var(--green); }
-  .produto-tag {
-    position: absolute; top: 1.5rem; right: 1.5rem;
-    background: var(--green);
-    color: var(--white);
-    font-size: 0.68rem;
-    font-weight: 500;
-    padding: 0.3rem 0.8rem;
-    border-radius: 2rem;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .produto-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
-  .produto-card h3 {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 0.6rem;
-    color: var(--dark);
-  }
-  .produto-card p { font-size: 0.88rem; color: rgba(44,44,44,0.7); line-height: 1.7; margin-bottom: 1.4rem; }
-  .produto-price {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--dark);
-    margin-bottom: 0.3rem;
-  }
-  .produto-price-note { font-size: 0.75rem; color: rgba(44,44,44,0.5); margin-bottom: 1.4rem; }
-  .produto-benefits { list-style: none; margin-bottom: 1.6rem; }
-  .produto-benefits li {
-    font-size: 0.83rem;
-    color: rgba(44,44,44,0.75);
-    padding: 0.35rem 0;
-    display: flex; align-items: flex-start; gap: 0.5rem;
-  }
-  .produto-benefits li::before { content: '🐧'; font-size: 0.7rem; margin-top: 0.15rem; flex-shrink: 0; }
-  .btn-produto {
-    display: block;
-    text-align: center;
-    background: var(--dark);
-    color: var(--white);
-    padding: 0.9rem;
-    border-radius: 2rem;
-    font-size: 0.85rem;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .btn-produto:hover { background: var(--green-deep); }
-  .btn-produto.green { background: var(--green); }
-  .btn-produto.green:hover { background: var(--green-dark); }
-  .btn-produto.outline {
-    background: transparent;
-    border: 1px solid rgba(44,44,44,0.25);
-    color: var(--dark);
-  }
-  .btn-produto.outline:hover { border-color: var(--green); color: var(--green-dark); }
-
-  /* ===== COLÔNIA DESTAQUE ===== */
-  .colonia-section {
-    background: var(--dark);
-    color: var(--white);
+  /* ===== O PROBLEMA ===== */
+  .problem { background: var(--white); }
+  .problem-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4rem;
     align-items: center;
   }
-  .colonia-section .section-eyebrow { color: var(--yellow); }
-  .colonia-section .section-eyebrow::before { background: var(--yellow); }
-  .colonia-section .section-title { color: var(--white); }
-  .colonia-section .section-sub { color: rgba(255,255,255,0.65); max-width: 460px; }
-  .colonia-items { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1rem; }
-  .colonia-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-    padding: 1.2rem;
-    background: rgba(255,255,255,0.06);
+  .problem-list { list-style: none; margin-top: 2rem; }
+  .problem-item {
+    padding: 1.5rem;
+    background: var(--bg);
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--yellow);
   }
-  .colonia-item-icon { font-size: 1.5rem; flex-shrink: 0; }
-  .colonia-item-text h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.25rem; color: var(--white); }
-  .colonia-item-text p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
-  .colonia-cta-box {
-    background: rgba(122,158,138,0.2);
-    border: 1px solid rgba(122,158,138,0.4);
-    border-radius: 20px;
-    padding: 2rem;
-  }
-  .colonia-cta-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; }
-  .colonia-cta-text { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--white); line-height: 1.3; margin-bottom: 1.5rem; }
-  .colonia-cta-btn {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: var(--yellow);
-    color: var(--dark);
-    padding: 1rem 2rem;
-    border-radius: 3rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .colonia-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,184,75,0.3); }
+  .problem-item h4 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.4rem; }
+  .problem-item p { font-size: 0.9rem; opacity: 0.8; }
 
-  /* ===== COMO FUNCIONA ===== */
-  .como-funciona { background: var(--cream); }
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin-top: 3.5rem;
-  }
-  .step {
-    display: flex; flex-direction: column; gap: 1rem;
-    position: relative;
-  }
-  .step-num {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: var(--green);
-    color: var(--white);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 400;
-    flex-shrink: 0;
-  }
-  .step h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; }
-  .step p { font-size: 0.85rem; color: rgba(44,44,44,0.7); line-height: 1.7; }
+  /* ===== SOLUÇÃO ===== */
+  .solution { background: var(--dark); color: var(--white); text-align: center; }
+  .solution .section-title { color: var(--white); }
+  .solution-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.9; opacity: 0.9; }
 
-  /* ===== DEPOIMENTOS ===== */
-  .depoimentos { background: var(--white); }
-  .depoimentos-grid {
+  /* ===== CASOS DE USO ===== */
+  .cases-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
   }
-  .depoimento-card {
-    background: var(--cream);
-    border-radius: 16px;
-    padding: 2rem;
+  .case-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
     border: 1px solid rgba(44,44,44,0.08);
+    transition: transform 0.3s;
   }
-  .depoimento-stars { font-size: 0.9rem; color: var(--yellow); margin-bottom: 1rem; letter-spacing: 0.1em; }
-  .depoimento-text { font-size: 0.95rem; color: rgba(44,44,44,0.8); line-height: 1.8; margin-bottom: 1.2rem; font-style: italic; }
-  .depoimento-autor { font-size: 0.85rem; font-weight: 500; color: var(--dark); margin-bottom: 0.5rem; }
-  .depoimento-tag { font-size: 0.75rem; color: var(--green); font-weight: 400; }
-  .depoimentos-note { font-size: 0.8rem; color: rgba(44,44,44,0.5); margin-top: 2rem; text-align: center; }
+  .case-card:hover { transform: translateY(-8px); }
+  .case-img { height: 240px; background: var(--bg-dark); overflow: hidden; }
+  .case-img img { width: 100%; height: 100%; object-fit: cover; }
+  .case-info { padding: 2rem; }
+  .case-info h4 { font-family: var(--serif); font-size: 1.4rem; margin-bottom: 0.8rem; }
+  .case-tag { font-size: 0.7rem; color: var(--green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
+  .case-info p { font-size: 0.9rem; opacity: 0.7; }
 
-  /* ===== CTA FINAL ===== */
-  .cta-final {
-    background: var(--dark);
-    color: var(--white);
-    padding: 6rem 4rem;
-    text-align: center;
+  /* ===== NÍVEIS DE SERVIÇO ===== */
+  .pricing { background: var(--bg-dark); }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
   }
-  .cta-final .penguin { font-size: 4rem; margin-bottom: 1rem; }
-  .cta-final h2 {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
-    margin-bottom: 1.2rem;
+  .price-card {
+    background: var(--white);
+    border-radius: 32px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(44,44,44,0.05);
+    position: relative;
   }
-  .cta-final h2 em { font-style: italic; color: var(--yellow); }
-  .cta-final p { color: rgba(255,255,255,0.65); max-width: 500px; margin: 0 auto 2.5rem; font-size: 1rem; line-height: 1.8; }
-  .btn-cta-final {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: var(--yellow);
-    color: var(--dark);
-    padding: 1.1rem 2.5rem;
-    border-radius: 3rem;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
+  .price-card.featured {
+    border: 2px solid var(--green);
+    transform: scale(1.05);
+    z-index: 2;
   }
-  .btn-cta-final:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.25); }
+  .price-badge {
+    position: absolute; top: 1.5rem; right: 1.5rem;
+    background: var(--green); color: white;
+    padding: 0.3rem 0.8rem; border-radius: 2rem;
+    font-size: 0.65rem; font-weight: 600;
+  }
+  .price-header h3 { font-family: var(--serif); font-size: 1.8rem; margin-bottom: 1rem; }
+  .price-header p { font-size: 0.9rem; opacity: 0.7; margin-bottom: 2rem; min-height: 3.4rem; }
+  .price-value { font-family: var(--serif); font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .price-note { font-size: 0.8rem; opacity: 0.5; margin-bottom: 2.5rem; }
+  .price-features { list-style: none; margin-bottom: 3rem; flex-grow: 1; }
+  .price-features li {
+    font-size: 0.9rem; padding: 0.6rem 0;
+    display: flex; gap: 0.8rem; align-items: flex-start;
+  }
+  .price-features li::before { content: '✓'; color: var(--green); font-weight: bold; }
+  .btn-price {
+    display: block; text-align: center; padding: 1rem;
+    border-radius: 3rem; text-decoration: none; font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-price.dark { background: var(--dark); color: white; }
+  .btn-price.outline { border: 1px solid var(--dark); color: var(--dark); }
+  .btn-price:hover { transform: translateY(-2px); opacity: 0.9; }
+
+  /* ===== JORNADA ===== */
+  .journey { background: var(--white); }
+  .journey-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .journey-step { text-align: center; position: relative; }
+  .step-num {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--bg); color: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 1.8rem;
+    margin: 0 auto 1.5rem; border: 1px solid var(--green);
+  }
+  .journey-step h4 { font-family: var(--serif); font-size: 1.3rem; margin-bottom: 0.8rem; }
+  .journey-step p { font-size: 0.85rem; opacity: 0.7; }
+
+  /* ===== FAQ ===== */
+  .faq { background: var(--bg); }
+  .faq-grid { max-width: 800px; margin: 3rem auto 0; }
+  .faq-item {
+    background: var(--white); border-radius: 16px;
+    margin-bottom: 1rem; padding: 1.5rem;
+    border: 1px solid rgba(44,44,44,0.05);
+  }
+  .faq-item h4 { font-family: var(--serif); font-size: 1.2rem; margin-bottom: 0.8rem; color: var(--green-dark); }
+  .faq-item p { font-size: 0.9rem; opacity: 0.8; }
+
+  /* ===== VIDEO ===== */
+  .video-section { background: var(--white); text-align: center; }
+  .video-container {
+    max-width: 900px; margin: 3rem auto 0;
+    aspect-ratio: 16/9; background: var(--dark);
+    border-radius: 32px; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-style: italic;
+  }
 
   /* ===== FOOTER ===== */
   footer {
-    background: var(--dark);
-    color: rgba(255,255,255,0.5);
-    padding: 3rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    background: var(--dark); color: rgba(255,255,255,0.5);
+    padding: 4rem; display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 2rem;
   }
-  .footer-logo { font-family: var(--serif); font-size: 1.3rem; color: var(--white); }
+  .footer-logo { font-family: var(--serif); font-size: 1.5rem; color: white; }
   .footer-logo span { color: var(--green); }
-  .footer-links { display: flex; gap: 1.5rem; }
-  .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--green); }
-  .footer-copy { font-size: 0.75rem; }
-
-  /* ===== ANIMAÇÕES ===== */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .fade-up { animation: fadeUp 0.7s ease forwards; }
-  .fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
-  .fade-up-3 { animation: fadeUp 0.7s 0.3s ease both; }
-  .fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { color: inherit; text-decoration: none; font-size: 0.85rem; }
+  .footer-links a:hover { color: white; }
 
   /* ===== MOBILE ===== */
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.2rem; }
+    nav { padding: 1rem; }
     .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 3rem; }
-    .hero-visual { order: -1; }
-    .hero-photo-wrap { width: 240px; height: 300px; }
-    .hero-float-card, .hero-float-card2 { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .about { grid-template-columns: 1fr; gap: 2.5rem; }
-    .about-img { display: none; }
-    .colonia-section { grid-template-columns: 1fr; gap: 3rem; }
-    footer { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
-    .cta-final { padding: 5rem 1.5rem; }
+    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; text-align: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-img-wrap { order: -1; aspect-ratio: 1/1; }
+    section { padding: 5rem 1.5rem; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .price-card.featured { transform: none; margin: 1rem 0; }
+    footer { flex-direction: column; text-align: center; }
   }
 </style>
 </head>
@@ -550,521 +318,235 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">influ<span>mae</span></a>
+  <a href="index_atualizado.html" class="nav-logo">influ<span>mae</span></a>
   <div class="nav-links">
-    <a href="#sobre">Sobre</a>
-    <a href="#o-que-e">A Colônia</a>
-    <a href="#produtos">Produtos</a>
-    <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="nav-cta">Entrar no grupo 🐧</a>
+    <a href="#problema">O Problema</a>
+    <a href="#solucao">A Solução</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://wa.me/5521967060990?text=Olá,%20quero%20saber%20mais%20sobre%20a%20consultoria%20para%20profissionais%20da%20saúde." class="nav-cta" target="_blank">Falar com a Carol 📱</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <div class="hero-eyebrow fade-up">📖 E-book: Guia Completo de Arquitetura Sensorial</div>
-    <h1 class="fade-up-2">
-      E se a casa fosse<br>
-      <em>a resposta?</em>
-    </h1>
-    <p class="hero-sub fade-up-3">
-      O ambiente onde seu filho vive faz algo com ele todos os dias — ajudando ou atrapalhando. Não tem neutro. Descubra como transformar cada cômodo em uma ferramenta de desenvolvimento.
-    </p>
-    <div class="hero-badges fade-up-3">
-      <span class="badge badge-green">📚 5 capítulos práticos</span>
-      <span class="badge badge-green">✓ Checklist por cômodo</span>
-      <span class="badge badge-green">📊 3 casos reais de transformação</span>
-    </div>
-    <div style="background:rgba(232,184,75,0.15);border:1px solid #E8B84B;border-radius:16px;padding:1rem 1.4rem;margin-bottom:1.8rem;" class="fade-up-3">
-      <div style="font-size:0.75rem;color:#8a6800;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.3rem;">🎁 Cupom SEGUIDORAINFLUMAE</div>
-      <div style="font-size:0.9rem;color:rgba(44,44,44,0.75);line-height:1.6;">Ganhe 15% de desconto no e-book. Acesso imediato após a compra.</div>
-    </div>
-    <div class="hero-actions fade-up-4">
-      <a href="https://pay.kiwify.com.br/F4G6zu3" class="btn-primary">Quero o e-book agora 📖</a>
-      <a href="#colonia" class="btn-secondary">Entrar no grupo gratuito →</a>
-    </div>
+    <div class="hero-badge">Exclusivo para Profissionais de Saúde</div>
+    <h1>Transforme o seu espaço de atendimento no seu <em>maior aliado terapêutico</em>.</h1>
+    <p class="hero-sub">Projetos de arquitetura sensorial que potencializam seus resultados, reduzem a desregulação dos pacientes e elevam o nível do seu consultório. Eu não substituo o seu trabalho — eu crio o cenário perfeito para que ele aconteça.</p>
+    <a href="#servicos" class="btn-primary">Conhecer as Soluções para Profissionais →</a>
   </div>
-
-  <div class="hero-visual fade-up-2">
-    <div class="hero-photo-wrap">
-      <img src="carol.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top center">
-    </div>
-    <div class="hero-float-card">
-      <img src="logoinstagram.png" style="width:24px;height:24px;object-fit:contain;display:block;margin-bottom:0.4rem;">
-      <div class="stat">10.6k</div>
-      <div class="stat-label">seguidoras no Instagram</div>
-    </div>
-    <div class="hero-float-card2">
-      <strong>Harvard</strong>
-      Intervenção Precoce em TEA
-    </div>
+  <div class="hero-img-wrap">
+    <!-- ESPAÇO PARA FOTO DA CAROL EM AMBIENTE PROFISSIONAL -->
+    <img src="carol_profissional.jpg" alt="Carol Anelhe em ambiente terapêutico" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+Carol+Profissional'">
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="about" id="sobre">
-  <div class="about-text">
-    <div class="section-eyebrow">Quem é Carol</div>
-    <blockquote class="about-quote">
-      "Meu filho me ensinou arquitetura sensorial muito antes de Harvard confirmar."
-    </blockquote>
-    <p>Cresci em Padre Miguel, bairro humilde do Rio de Janeiro, comecei a trabalhar com 16 anos e nunca parei. Passei pela COVID de um jeito que poucos passam — fiquei sem andar por meses. Me reabilitei. E quando todo mundo dizia que eu demoraria para engravidar, o Noah chegou em duas semanas.</p>
-    <p>Meu filho nasceu prematuro. Teve enterocolite necrosante, APLV, refluxo intenso. Quando nos mudamos para os EUA, o diagnóstico chegou: transtorno de processamento sensorial e autismo. Estava no limite. Então fiz o que sempre faço: fui atrás.</p>
-    <p>Li, estudei, fiz o curso de intervenção precoce em Harvard. Apliquei tudo dentro da nossa casa. Em 4 meses, o Noah aprendeu a falar de verdade, foi para a escola e eu aprendi que o ambiente é parte do tratamento — não detalhe.</p>
-    <p>Hoje ensino mães a transformar o lar em ferramenta de desenvolvimento.</p>
-    <div class="about-credentials">
-      <span class="credential"><span class="credential-icon">🎓</span> Harvard — ECD</span>
-      <span class="credential"><span class="credential-icon">🏠</span> Arquiteta Sensorial</span>
-      <span class="credential"><span class="credential-icon">🐧</span> Mãe atípica</span>
-      <span class="credential"><span class="credential-icon">🇧🇷🇺🇸</span> Louisville, KY</span>
+<!-- O PROBLEMA -->
+<section class="problem" id="problema">
+  <div class="section-eyebrow">O cenário atual</div>
+  <div class="problem-grid">
+    <div>
+      <h2 class="section-title">O seu consultório está <em>ajudando ou atrapalhando</em> os seus pacientes?</h2>
+      <p>Você investe anos em formação e dedicação, mas muitas vezes o ambiente físico joga contra. O excesso de estímulos ou a falta de organização sensorial podem causar desregulação antes mesmo de a sessão começar.</p>
     </div>
-  </div>
-  <div class="about-img" style="background:var(--bg-dark); border-radius:40px; overflow:hidden; border:2px solid rgba(122,158,138,0.2);">
-    <img src="carol2.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center top">
-  </div>
-</section>
-
-<!-- PRODUTOS -->
-<section class="produtos" id="produtos">
-  <div class="produtos-header">
-    <div class="section-eyebrow">Produtos</div>
-    <h2 class="section-title">Comece por <em>onde faz sentido</em></h2>
-    <p class="section-sub">O e-book é seu guia. A Colônia é sua comunidade. Juntos, transformam ambientes e vidas.</p>
-  </div>
-
-  <div class="produtos-grid">
-
-    <!-- E-BOOK (DESTAQUE PRINCIPAL) -->
-    <div class="produto-card destaque" style="order: -1;">
-      <div class="produto-tag">Produto Principal</div>
-      <div class="produto-icon">📖</div>
-      <h3>E se a casa fosse a resposta?</h3>
-      <p>O guia completo de arquitetura sensorial para mães de crianças atípicas. Checklists por cômodo, os 8 erros mais comuns e 3 transformações reais de famílias.</p>
-      <div class="produto-price">R$ 59,90</div>
-      <div class="produto-price-note" style="margin-bottom:0.5rem;">acesso imediato após a compra</div>
-      <div style="display:inline-block;background:rgba(232,184,75,0.15);border:1px solid #E8B84B;border-radius:2rem;padding:0.3rem 0.9rem;font-size:0.78rem;color:#8a6800;margin-bottom:1rem;">
-        🎁 Use o cupom <strong>SEGUIDORAINFLUMAE</strong> (15% desconto)
+    <div class="problem-list">
+      <div class="problem-item">
+        <h4>Engajamento Lento</h4>
+        <p>Pacientes que demoram a entrar no ritmo da terapia por desconforto ambiental.</p>
       </div>
-      <ul class="produto-benefits">
-        <li>5 capítulos práticos</li>
-        <li>Checklist por cômodo</li>
-        <li>Os 8 erros mais comuns</li>
-        <li>3 casos reais de transformação</li>
+      <div class="problem-item">
+        <h4>Insegurança Técnica</h4>
+        <p>Falta de direcionamento sobre quais cores, texturas e luzes realmente funcionam para cada perfil.</p>
+      </div>
+      <div class="problem-item">
+        <h4>Desalinhamento de Imagem</h4>
+        <p>O consultório não reflete a excelência e o valor do trabalho que você realiza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A SOLUÇÃO -->
+<section class="solution" id="solucao">
+  <div class="section-eyebrow" style="color: var(--yellow);">A Resposta</div>
+  <h2 class="section-title">A Arquitetura Sensorial como <em>Ferramenta Terapêutica</em></h2>
+  <div class="solution-content">
+    <p>Um ambiente projetado com intencionalidade sensorial abraça a criança neurodivergente. Através do uso estratégico de cores, texturas e layout, criamos espaços previsíveis e seguros. O resultado? Sessões mais fluidas, pacientes mais regulados e pais mais confiantes no seu serviço.</p>
+  </div>
+</section>
+
+<!-- CASOS DE USO -->
+<section class="cases">
+  <div class="section-eyebrow">Aplicações Práticas</div>
+  <h2 class="section-title">Onde a arquitetura <em>faz a diferença</em></h2>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-img">
+        <!-- IMAGEM EXEMPLO: CLINICA -->
+        <img src="./Ambientesterapeuticos/exemplo_clinica.jpeg" alt="Exemplo Consultório Pediátrico" onerror="this.src='https://via.placeholder.com/400x300?text=Exemplo+Clínica'">
+      </div>
+      <div class="case-info">
+        <span class="case-tag">Consultório Pediátrico</span>
+        <h4>Redução de Ansiedade</h4>
+        <p>Uso de cores calmantes e iluminação suave para transformar a espera e o atendimento em uma experiência positiva.</p>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-img">
+        <!-- IMAGEM EXEMPLO: SALA DE DESCOMPRESSÃO -->
+        <img src="./Ambientesterapeuticos/exemplo_descompressao.jpeg" alt="Exemplo Sala de Descompressão" onerror="this.src='https://via.placeholder.com/400x300?text=Sala+de+Descompressão'">
+      </div>
+      <div class="case-info">
+        <span class="case-tag">Sala de Descompressão</span>
+        <h4>Refúgio de Regulação</h4>
+        <p>Ambientes com estímulos controlados, iluminação dimerizável e elementos de propriocepção para momentos de crise.</p>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-img">
+        <img src="exemplo_to.jpg" alt="Exemplo Sala de TO" onerror="this.src='https://via.placeholder.com/400x300?text=Sala+de+Terapia+Ocupacional'">
+      </div>
+      <div class="case-info">
+        <span class="case-tag">Terapia Ocupacional</span>
+        <h4>Funcionalidade Extrema</h4>
+        <p>Layout adaptado para equipamentos de suspensão e organização visual que facilita o fluxo da terapia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NÍVEIS DE SERVIÇO -->
+<section class="pricing" id="servicos">
+  <div class="section-eyebrow">Níveis de Serviço</div>
+  <h2 class="section-title">Escolha o suporte <em>ideal para você</em></h2>
+  <div class="pricing-grid">
+    
+    <!-- BÁSICA -->
+    <div class="price-card">
+      <div class="price-header">
+        <h3>Consultoria Básica</h3>
+        <p>Direcionamento essencial para quem vai executar as mudanças por conta própria.</p>
+      </div>
+      <div class="price-value">R$ 800</div>
+      <div class="price-note">Investimento inicial · Entrega em 10 dias</div>
+      <ul class="price-features">
+        <li>Análise técnica do espaço atual</li>
+        <li>Identificação de barreiras sensoriais</li>
+        <li>Recomendações práticas de adequação</li>
+        <li>Relatório Técnico em PDF</li>
+        <li>Atendimento remoto ou presencial</li>
       </ul>
-      <a href="https://pay.kiwify.com.br/F4G6zu3" class="btn-produto green">Quero o e-book →</a>
+      <a href="https://wa.me/5521967060990?text=Olá,%20tenho%20interesse%20na%20Consultoria%20Básica." class="btn-price outline" target="_blank">Quero a Consultoria Básica</a>
     </div>
 
-    <!-- COLÔNIA (GRATUITA) -->
-    <div class="produto-card destaque">
-      <div class="produto-tag" style="background:var(--yellow);color:var(--dark);">Gratuito</div>
-      <div class="produto-icon">🐧</div>
-      <h3>A Colônia — Mães de Pinguins</h3>
-      <p>Nenhuma mãe fica sozinha no frio. Curadoria semanal, conteúdo exclusivo de Harvard e sorteio do Ninho Sensorial a cada 45 dias. Membras ativas ganham mais chances.</p>
-      <div class="produto-price" style="font-size:1.3rem;margin-bottom:0.2rem;">Gratuito<span style="font-size:0.9rem;font-weight:300;"></span></div>
-      <div class="produto-price-note">Acesso imediato ao grupo de WhatsApp</div>
-      <ul class="produto-benefits">
-        <li>Curadoria semanal com links diretos</li>
-        <li>Conteúdo exclusivo de Harvard</li>
-        <li>Sorteio do Ninho Sensorial a cada 45 dias</li>
-        <li>Membras ativas têm mais chances</li>
-        <li>Comunidade de apoio real</li>
-      </ul>
-      <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="btn-produto green">Entrar no grupo agora 🐧</a>
-    </div>
-
-    <!-- PARA PROFISSIONAIS -->
-    <div class="produto-card">
-      <div class="produto-icon">🏥</div>
-      <h3>Para profissionais de saúde</h3>
-      <p>Arquitetura Sensorial para ambientes terapêuticos. Transforme sua clínica ou consultório em uma ferramenta de tratamento poderosa.</p>
-      <div class="produto-price-note" style="margin-top:0.5rem;">Consultoria Especializada</div>
-      <ul class="produto-benefits">
-        <li>Diagnóstico do espaço clínico</li>
-        <li>Plano de implementação sensorial</li>
-        <li>Treinamento para sua equipe</li>
-        <li>Foco em resultados terapêuticos</li>
-      </ul>
-      <div style="display:flex; flex-direction:column; gap:0.8rem;">
-        <a href="https://wa.me/5521967060990?text=Olá,%20quero%20saber%20mais%20sobre%20a%20consultoria%20para%20profissionais%20da%20saúde." class="btn-produto green" target="_blank">Falar com a Carol 📱</a>
-        <a href="Ambientesterapeuticos" class="btn-produto outline">Conhecer o projeto →</a>
+    <!-- COMPLETA -->
+    <div class="price-card featured">
+      <div class="price-badge">Mais Procurado</div>
+      <div class="price-header">
+        <h3>Consultoria Completa</h3>
+        <p>O mapa visual e prático para transformar sem obras pesadas.</p>
       </div>
+      <div class="price-value">R$ 1.500</div>
+      <div class="price-note">Investimento inicial · Entrega em 20 dias</div>
+      <ul class="price-features">
+        <li>Tudo da Consultoria Básica</li>
+        <li>Guia de Desenvolvimento Personalizado</li>
+        <li>Curadoria de compras com links diretos</li>
+        <li>Moodboard visual do ambiente</li>
+        <li>Dossiê Digital Completo</li>
+      </ul>
+      <a href="https://wa.me/5521967060990?text=Olá,%20tenho%20interesse%20na%20Consultoria%20Completa." class="btn-price dark" target="_blank">Quero a Consultoria Completa</a>
     </div>
 
-    <!-- NINHO SENSORIAL -->
-    <div class="produto-card">
-      <div class="produto-icon">🏠</div>
-      <h3>Ninho Sensorial</h3>
-      <p>O projeto completo de arquitetura sensorial para um cômodo da sua casa. Feito pela Carol, com projeto arquitetônico e lista mastigada de produtos com links de compra.</p>
-      <div class="produto-price-note" style="margin-top:0.5rem;">Em breve</div>
-      <ul class="produto-benefits">
-        <li>Projeto arquitetônico sensorial completo</li>
-        <li>Lista de produtos curados com links</li>
-        <li>Orientação de implementação</li>
-        <li>Sorteado gratuitamente na Colônia</li>
+    <!-- PROJETO TÉCNICO -->
+    <div class="price-card">
+      <div class="price-header">
+        <h3>Projeto Técnico</h3>
+        <p>Transformação total para quem vai montar do zero ou reformar.</p>
+      </div>
+      <div class="price-value">R$ 5.000</div>
+      <div class="price-note">Investimento inicial · Entrega em 45-60 dias</div>
+      <ul class="price-features">
+        <li>Tudo da Consultoria Completa</li>
+        <li>Planta baixa com layout detalhado</li>
+        <li>Projeto Luminotécnico Sensorial</li>
+        <li>Detalhamento de marcenaria</li>
+        <li>Caderno de Projeto Executivo</li>
       </ul>
-      <a href="#" class="btn-produto outline" onclick="abrirListaEspera('Ninho Sensorial'); return false;" style="cursor:pointer;opacity:1;">Entrar na lista de espera →</a>
+      <a href="https://wa.me/5521967060990?text=Olá,%20tenho%20interesse%20no%20Projeto%20Técnico%20Completo." class="btn-price outline" target="_blank">Quero o Projeto Completo</a>
     </div>
 
   </div>
 </section>
 
-<!-- COLÔNIA DESTAQUE -->
-<section class="colonia-section" id="colonia" style="position:relative;overflow:hidden;">
-  <div style="position:absolute;inset:0;z-index:0;">
-    <img src="colonia.png" style="width:100%;height:100%;object-fit:cover;opacity:0.08;filter:grayscale(30%);">
-  </div>
-  <div style="position:relative;z-index:1;">
-    <div class="section-eyebrow">A Colônia — Mães de Pinguins</div>
-    <h2 class="section-title" style="color:white">Nenhuma mãe fica <em style="color:#E8B84B">sozinha no frio</em></h2>
-    <p class="section-sub">O pinguim-imperador vive em -60 graus e ainda assim cria seus filhotes. Sabe como? Ele se junta à colônia. As que estão do lado de fora vão pro centro. As do centro vão pra fora. Ninguém fica sozinha por muito tempo.</p>
-    <div class="colonia-items">
-      <div class="colonia-item">
-        <div class="colonia-item-icon">📦</div>
-        <div class="colonia-item-text">
-          <h4>Curadoria semanal</h4>
-          <p>Produtos sensoriais testados e aprovados, com links diretos e justificativa sensorial de cada um. Você não pesquisa — eu pesquiso por você.</p>
-        </div>
-      </div>
-      <div class="colonia-item">
-        <div class="colonia-item-icon">🎓</div>
-        <div class="colonia-item-text">
-          <h4>Harvard toda semana</h4>
-          <p>O que Carol aprende no curso de intervenção precoce em TEA, traduzido para o dia a dia da sua casa.</p>
-        </div>
-      </div>
-      <div class="colonia-item">
-        <div class="colonia-item-icon">🏠</div>
-        <div class="colonia-item-text">
-          <h4>Sorteio do Ninho Sensorial a cada 45 dias</h4>
-          <p>Projeto completo (R$5.000) sorteado entre as membras ativas. Quanto mais tempo na Colônia, mais chances você tem.</p>
-        </div>
-      </div>
-      <div class="colonia-item">
-        <div class="colonia-item-icon">📖</div>
-        <div class="colonia-item-text">
-          <h4>Comunidade de apoio real</h4>
-          <p>Mães que entendem, que já passaram, que estão passando. Histórias, dúvidas, vitórias compartilhadas todo dia.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="colonia-cta-box" style="position:relative;z-index:2;">
-    <div class="colonia-cta-label">🐧 Pronto para entrar?</div>
-    <div class="colonia-cta-text">Acesso gratuito ao grupo de WhatsApp</div>
-    <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="colonia-cta-btn">
-      Entrar na Colônia agora →
-    </a>
-    <p style="margin-top:1.5rem;font-size:0.85rem;color:rgba(255,255,255,0.6);">🔒 Seus dados ficam só com a Carol. Sem spam, só o que importa.</p>
-  </div>
-</section>
-
-<!-- O QUE É A COLÔNIA -->
-<section id="o-que-e" style="background:var(--cream);padding:6rem 4rem;">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-eyebrow">Como funciona por dentro</div>
-    <h2 class="section-title">Cada semana tem <em>uma entrega garantida</em></h2>
-    <div style="display:flex;align-items:flex-start;gap:2rem;margin-bottom:1.5rem;flex-wrap:wrap;">
-      <p class="section-sub" style="margin-bottom:0;flex:1;min-width:280px;">Não é um grupo qualquer de WhatsApp. A Colônia tem estrutura, ritmo e intenção. Toda semana você sabe o que esperar — e toda semana vale a assinatura.</p>
-      <img src="pinguim-mae.png" style="width:120px;height:120px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 8px 24px rgba(44,44,44,0.12));">
-    </div>
-
-    <!-- CALENDÁRIO SEMANAL -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.2rem;margin-bottom:4rem;">
-      <div style="background:var(--white);border-radius:20px;padding:1.6rem;border:1px solid rgba(44,44,44,0.07);position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);"></div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--green);line-height:1;margin-bottom:0.5rem;">1</div>
-        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:0.8rem;">Semana 1</div>
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.4rem;">Revelação do tema</h4>
-        <p style="font-size:0.82rem;color:rgba(44,44,44,0.65);line-height:1.6;margin-bottom:0.8rem;">Carol revela o tema do mês e dá boas-vindas às novas membras ao vivo.</p>
-        <span style="font-size:0.72rem;background:rgba(122,158,138,0.15);color:var(--green-dark);padding:0.25rem 0.7rem;border-radius:2rem;">🎥 Carol ao vivo · 5 min</span>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.6rem;border:1px solid rgba(44,44,44,0.07);position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);"></div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--yellow);line-height:1;margin-bottom:0.5rem;">2</div>
-        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#8a6800;margin-bottom:0.8rem;">Semana 2</div>
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.4rem;">Curadoria de produtos</h4>
-        <p style="font-size:0.82rem;color:rgba(44,44,44,0.65);line-height:1.6;margin-bottom:0.8rem;">Lista completa com links de afiliado e a explicação sensorial de cada produto.</p>
-        <span style="font-size:0.72rem;background:rgba(232,184,75,0.15);color:#8a6800;padding:0.25rem 0.7rem;border-radius:2rem;">⚡ Entrega automática</span>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.6rem;border:1px solid rgba(44,44,44,0.07);position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green-deep);"></div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--green-deep);line-height:1;margin-bottom:0.5rem;">3</div>
-        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-deep);margin-bottom:0.8rem;">Semana 3</div>
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.4rem;">Harvard ao vivo</h4>
-        <p style="font-size:0.82rem;color:rgba(44,44,44,0.65);line-height:1.6;margin-bottom:0.8rem;">Live ou áudio exclusivo de 20 a 30 min aprofundando o tema do mês com o que Carol aprende.</p>
-        <span style="font-size:0.72rem;background:rgba(61,96,84,0.12);color:var(--green-deep);padding:0.25rem 0.7rem;border-radius:2rem;">🎙️ Carol ao vivo · 30 min</span>
-      </div>
-      <div style="background:var(--dark);border-radius:20px;padding:1.6rem;position:relative;overflow:hidden;">
-        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);"></div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--yellow);line-height:1;margin-bottom:0.5rem;">4</div>
-        <div style="font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:0.8rem;">Semana 4</div>
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:#fff;margin-bottom:0.4rem;">Sorteio do Ninho 🏠</h4>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:0.8rem;">Sorteio do Ninho Sensorial + celebração das vitórias das membras. Você já está participando.</p>
-        <span style="font-size:0.72rem;background:rgba(232,184,75,0.2);color:var(--yellow);padding:0.25rem 0.7rem;border-radius:2rem;">🎯 Evento + automático</span>
-      </div>
-    </div>
-
-    <!-- TEMAS 6 MESES -->
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--dark);margin-bottom:0.5rem;">Os primeiros <em style="font-style:italic;color:var(--green-dark);">6 meses</em> da Colônia</h3>
-    <p style="font-size:0.9rem;color:rgba(44,44,44,0.6);margin-bottom:2rem;line-height:1.7;">Cada mês tem um cômodo. Cada cômodo tem um tema. No final do semestre você terá transformado a casa inteira — um ambiente por vez.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;">
-      <div style="display:flex;gap:1rem;align-items:flex-start;background:var(--white);border-radius:16px;padding:1.2rem;border:1px solid rgba(44,44,44,0.06);">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:#fff;flex-shrink:0;">1</div>
-        <div>
-          <div style="font-size:0.72rem;color:var(--green);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;">Mês 1</div>
-          <div style="font-size:0.95rem;font-weight:500;color:var(--dark);">Quarto sensorial</div>
-          <div style="font-size:0.8rem;color:rgba(44,44,44,0.55);">Iluminação, texturas e controle de ruído</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:1rem;align-items:flex-start;background:var(--white);border-radius:16px;padding:1.2rem;border:1px solid rgba(44,44,44,0.06);">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:#fff;flex-shrink:0;">2</div>
-        <div>
-          <div style="font-size:0.72rem;color:var(--green);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;">Mês 2</div>
-          <div style="font-size:0.95rem;font-weight:500;color:var(--dark);">Sala e convivência</div>
-          <div style="font-size:0.8rem;color:rgba(44,44,44,0.55);">Estimulação sem sobrecarga</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:1rem;align-items:flex-start;background:var(--white);border-radius:16px;padding:1.2rem;border:1px solid rgba(44,44,44,0.06);">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:#fff;flex-shrink:0;">3</div>
-        <div>
-          <div style="font-size:0.72rem;color:var(--green);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;">Mês 3</div>
-          <div style="font-size:0.95rem;font-weight:500;color:var(--dark);">Banheiro seguro</div>
-          <div style="font-size:0.8rem;color:rgba(44,44,44,0.55);">Texturas, temperatura e rotina</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:1rem;align-items:flex-start;background:var(--white);border-radius:16px;padding:1.2rem;border:1px solid rgba(44,44,44,0.06);">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:#fff;flex-shrink:0;">4</div>
-        <div>
-          <div style="font-size:0.72rem;color:var(--green);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;">Mês 4</div>
-          <div style="font-size:0.95rem;font-weight:500;color:var(--dark);">Canto de estudos</div>
-          <div style="font-size:0.8rem;color:rgba(44,44,44,0.55);">Foco para TDAH e TEA</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:1rem;align-items:flex-start;background:var(--white);border-radius:16px;padding:1.2rem;border:1px solid rgba(44,44,44,0.06);">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:#fff;flex-shrink:0;">5</div>
-        <div>
-          <div style="font-size:0.72rem;color:var(--green);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;">Mês 5</div>
-          <div style="font-size:0.95rem;font-weight:500;color:var(--dark);">Área externa</div>
-          <div style="font-size:0.8rem;color:rgba(44,44,44,0.55);">Quintal e varanda terapêuticos</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:1rem;align-items:flex-start;background:var(--dark);border-radius:16px;padding:1.2rem;border:1px solid rgba(232,184,75,0.3);">
-        <div style="width:36px;height:36px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);flex-shrink:0;">6</div>
-        <div>
-          <div style="font-size:0.72rem;color:var(--yellow);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;">Mês 6</div>
-          <div style="font-size:0.95rem;font-weight:500;color:#fff;">Diagnóstico da casa inteira</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Checklist completo + oferta do Ninho</div>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:2.5rem;text-align:center;">
-      <a href="https://chat.whatsapp.com/HUZfe623RHg2T6Fuvu5tpA?mode=gi_t" class="btn-primary" style="display:inline-flex;">Entrar na Colônia agora 🐧</a>
-    </div>
-  </div>
-</section>
-
-<!-- COMO FUNCIONA -->
-<section class="como-funciona">
-  <div class="section-eyebrow">Próximos passos</div>
-  <h2 class="section-title">Comece sua <em>transformação</em></h2>
-  <div class="steps-grid">
-    <div class="step">
+<!-- JORNADA -->
+<section class="journey">
+  <div class="section-eyebrow">Como Funciona</div>
+  <h2 class="section-title">Sua jornada de <em>transformação</em></h2>
+  <div class="journey-steps">
+    <div class="journey-step">
       <div class="step-num">1</div>
-      <h4>Leia o e-book</h4>
-      <p>Entenda os princípios de arquitetura sensorial com 5 capítulos práticos, checklists e casos reais de transformação.</p>
+      <h4>Diagnóstico</h4>
+      <p>Briefing detalhado para entender seu espaço e especialidade.</p>
     </div>
-    <div class="step">
+    <div class="journey-step">
       <div class="step-num">2</div>
-      <h4>Faça parte da Colônia</h4>
-      <p>Entre no grupo gratuito e receba curadoria semanal de produtos, conteúdo exclusivo de Harvard e uma comunidade que entende.</p>
+      <h4>Alinhamento</h4>
+      <p>Definição do nível de serviço ideal para sua necessidade.</p>
     </div>
-    <div class="step">
+    <div class="journey-step">
       <div class="step-num">3</div>
-      <h4>Aplica na sua casa</h4>
-      <p>Uma mudança por vez. Pequenas trocas que transformam o ambiente em semanas. Com a lista certa, fica simples.</p>
+      <h4>Mergulho Técnico</h4>
+      <p>Análise profunda e desenvolvimento das soluções personalizadas.</p>
     </div>
-    <div class="step">
+    <div class="journey-step">
       <div class="step-num">4</div>
-      <h4>Ou contrata o Ninho</h4>
-      <p>Quando quiser que Carol faça isso por você, cômodo por cômodo, o Ninho Sensorial oferece projeto completo com implementação.</p>
+      <h4>Entrega</h4>
+      <p>Apresentação do material e suporte na implementação.</p>
     </div>
   </div>
 </section>
 
-<!-- PROFISSIONAIS DE SAÚDE -->
-<section style="background:var(--cream);">
-  <div style="max-width:900px;margin:0 auto;">
-    <div class="section-eyebrow">Para profissionais de saúde</div>
-    <h2 class="section-title">Transforme seus <em>espaços terapêuticos</em></h2>
-    <p class="section-sub">Você trabalha com crianças neurodivergentes? Sabe aquele momento em que o ambiente faz toda a diferença? Quando a criança consegue se autorregular porque o espaço foi pensado para isso? Carol oferece consultoria especializada em arquitetura sensorial para clínicas, consultórios e centros de desenvolvimento.</p>
-    
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;margin-bottom:2.5rem;">
-      <div style="background:var(--white);border-radius:20px;padding:1.8rem;border:1px solid rgba(44,44,44,0.08);">
-        <div style="font-size:2rem;margin-bottom:1rem;">🏥</div>
-        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.5rem;">Diagnóstico Sensorial</h4>
-        <p style="font-size:0.85rem;color:rgba(44,44,44,0.7);line-height:1.7;">Análise completa do seu espaço + plano de implementação sensorial adaptado à sua realidade clínica. Identificamos os pontos de sobrecarga e as oportunidades de regulação.</p>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.8rem;border:1px solid rgba(44,44,44,0.08);">
-        <div style="font-size:2rem;margin-bottom:1rem;">👥</div>
-        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.5rem;">Treinamento de Equipes</h4>
-        <p style="font-size:0.85rem;color:rgba(44,44,44,0.7);line-height:1.7;">Capacite sua equipe para reconhecer sinais de disregulação e aplicar princípios de arquitetura sensorial no dia a dia. Workshops práticos e materiais de referência inclusos.</p>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.8rem;border:1px solid rgba(44,44,44,0.08);">
-        <div style="font-size:2rem;margin-bottom:1rem;">🎓</div>
-        <h4 style="font-family:var(--serif);font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:0.5rem;">Consultoria Contínua</h4>
-        <p style="font-size:0.85rem;color:rgba(44,44,44,0.7);line-height:1.7;">Suporte especializado para implementação, ajustes conforme você aprende com seus pacientes, e estratégias para potencializar resultados terapêuticos através do ambiente.</p>
-      </div>
-    </div>
-    
-    <div style="text-align:center;">
-      <p style="font-size:0.95rem;color:rgba(44,44,44,0.75);margin-bottom:1.5rem;line-height:1.8;">Quer saber mais sobre como a arquitetura sensorial pode transformar seus espaços terapêuticos e potencializar o tratamento dos seus pacientes?</p>
-      <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-        <a href="https://wa.me/5521967060990?text=Olá,%20quero%20saber%20mais%20sobre%20a%20consultoria%20para%20profissionais%20da%20saúde." class="btn-primary" style="display:inline-flex;background:var(--green);" target="_blank">Conversar com Carol 📱</a>
-        <a href="Ambientesterapeuticos" class="btn-secondary" style="display:inline-flex;">Ver detalhes do projeto →</a>
-      </div>
-    </div>
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="section-eyebrow">Mensagem da Carol</div>
+  <h2 class="section-title">O espaço não pode ser <em>um obstáculo</em></h2>
+  <div class="video-container">
+    <p>[Espaço reservado para o vídeo de apresentação da Carol]</p>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="depoimentos">
-  <div class="section-eyebrow">O que dizem</div>
-  <h2 class="section-title">Mães que já <em>transformaram</em></h2>
-  <div class="depoimentos-grid">
-    <div class="depoimento-card">
-      <div class="depoimento-stars">★★★★★</div>
-      <p class="depoimento-text">"Troquei a lâmpada do quarto do meu filho na segunda. Na quinta ele dormiu 40 minutos mais rápido. Não acredito que era tão simples."</p>
-      <div class="depoimento-autor">Mãe do Theo, 4 anos</div>
-      <div class="depoimento-tag">TEA · quarto adaptado</div>
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-eyebrow">Dúvidas Frequentes</div>
+  <h2 class="section-title" style="text-align: center;">Perguntas <em>Comuns</em></h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Atende fora da minha cidade?</h4>
+      <p>Sim. A Consultoria Básica e a Completa funcionam perfeitamente no formato 100% online através de um método rigoroso de análise remota.</p>
     </div>
-    <div class="depoimento-card">
-      <div class="depoimento-stars">★★★★★</div>
-      <p class="depoimento-text">"O banho da Luna durava 40 minutos de crise todo dia. Depois de três mudanças no banheiro, hoje leva 15 minutos com tranquilidade."</p>
-      <div class="depoimento-autor">Mãe da Luna, 6 anos</div>
-      <div class="depoimento-tag">TDAH + hipersensibilidade · banheiro adaptado</div>
+    <div class="faq-item">
+      <h4>Qual a diferença entre Consultoria e Projeto Técnico?</h4>
+      <p>A Consultoria foca em organização e mobiliário sem obras. O Projeto Técnico inclui detalhamento civil, marcenaria e iluminação embutida.</p>
     </div>
-    <div class="depoimento-card">
-      <div class="depoimento-stars">★★★★★</div>
-      <p class="depoimento-text">"Ele veio sentar no cantinho enquanto eu assistia TV do lado. Ficamos uma hora juntos. Eu chorei. Parecia impossível antes."</p>
-      <div class="depoimento-autor">Mãe do Pedro, 5 anos</div>
-      <div class="depoimento-tag">TEA · sala adaptada</div>
+    <div class="faq-item">
+      <h4>Serve apenas para pacientes autistas?</h4>
+      <p>Não. Beneficia crianças com TDAH, TPS, Síndrome de Down e até neurotípicas, criando um ambiente previsível e acolhedor para todos.</p>
     </div>
   </div>
-  <p class="depoimentos-note">* Nomes alterados para preservar privacidade. Casos reais de projetos acompanhados por Carol Anelhe.</p>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-final">
-  <div class="penguin">🐧</div>
-  <h2>Comece hoje com <em>o e-book</em></h2>
-  <p>O ambiente do seu filho está falando o tempo todo. Agora você vai entender o que ele está dizendo — e saber exatamente o que mudar. Uma mudança por semana já transforma o ambiente em meses.</p>
-  <a href="https://pay.kiwify.com.br/F4G6zu3" class="btn-cta-final">
-    Quero o e-book agora →
-  </a>
-  <p style="margin-top:1rem;font-size:0.85rem;opacity:0.7;">Use o cupom <strong>SEGUIDORAINFLUMAE</strong> e garanta seu desconto 🎁</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">influ<span>mae</span></div>
   <div class="footer-links">
-    <a href="https://instagram.com/influmae" target="_blank">@influmae</a>
-    <a href="#sobre">Sobre Carol</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#colonia">A Colônia</a>
+    <a href="index_atualizado.html">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="https://instagram.com/influmae" target="_blank">Instagram</a>
   </div>
   <div class="footer-copy">© 2025 influmae · Carol Anelhe · Arquitetura Sensorial</div>
 </footer>
-
-
-<!-- ===== MODAL LISTA DE ESPERA ===== -->
-<div id="modal-espera" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(44,44,44,0.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:#FDFAF7;border-radius:20px;padding:2.5rem 2rem;max-width:420px;width:100%;position:relative;box-shadow:0 24px 60px rgba(44,44,44,0.2);">
-    <button onclick="fecharModal()" style="position:absolute;top:1rem;right:1.2rem;background:none;border:none;font-size:1.4rem;cursor:pointer;color:#aaa;line-height:1;">×</button>
-    <div style="font-size:2rem;margin-bottom:0.8rem;">🐧</div>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:#2C2C2C;margin-bottom:0.5rem;">Lista de espera</h3>
-    <p id="modal-produto-nome" style="font-size:0.85rem;color:#7A9E8A;font-weight:500;margin-bottom:0.8rem;letter-spacing:0.05em;text-transform:uppercase;"></p>
-    <p style="font-size:0.9rem;color:#666;line-height:1.7;margin-bottom:1.5rem;">Deixa seu e-mail aqui e você será uma das primeiras a saber quando abrir. Membras da lista de espera têm condições especiais de lançamento.</p>
-    <form id="form-espera" onsubmit="enviarListaEspera(event)" style="display:flex;flex-direction:column;gap:0.8rem;">
-      <input type="text" id="espera-nome" placeholder="Seu nome" required style="padding:0.85rem 1rem;border:1px solid rgba(44,44,44,0.2);border-radius:2rem;font-size:0.9rem;font-family:inherit;background:#fff;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#7A9E8A'" onblur="this.style.borderColor='rgba(44,44,44,0.2)'">
-      <input type="email" id="espera-email" placeholder="Seu melhor e-mail" required style="padding:0.85rem 1rem;border:1px solid rgba(44,44,44,0.2);border-radius:2rem;font-size:0.9rem;font-family:inherit;background:#fff;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#7A9E8A'" onblur="this.style.borderColor='rgba(44,44,44,0.2)'">
-      <input type="tel" id="espera-whatsapp" placeholder="WhatsApp com DDD (ex: 11999999999)" required style="padding:0.85rem 1rem;border:1px solid rgba(44,44,44,0.2);border-radius:2rem;font-size:0.9rem;font-family:inherit;background:#fff;outline:none;transition:border-color 0.2s;" onfocus="this.style.borderColor='#7A9E8A'" onblur="this.style.borderColor='rgba(44,44,44,0.2)'">
-      <button type="submit" style="background:#4A5E4B;color:#fff;border:none;padding:1rem;border-radius:2rem;font-size:0.9rem;font-weight:500;cursor:pointer;font-family:inherit;transition:background 0.2s;" onmouseover="this.style.background='#3D5040'" onmouseout="this.style.background='#4A5E4B'">
-        Quero entrar na lista de espera →
-      </button>
-    </form>
-    <div id="espera-sucesso" style="display:none;text-align:center;padding:1rem 0;">
-      <div style="font-size:2rem;margin-bottom:0.5rem;">✅</div>
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#4A5E4B;">Pronto, xuxu! Você está na lista.</p>
-      <p style="font-size:0.85rem;color:#888;margin-top:0.4rem;">Você será avisada em primeira mão quando abrir.</p>
-    </div>
-  </div>
-</div>
-
-<script>
-  var produtoEspera = '';
-
-  // ===== GOOGLE APPS SCRIPT CONFIG =====
-  var SHEETBEST_URL = 'https://script.google.com/macros/s/AKfycbwFHXruKcbGRYKPngDu9_toauULZ6txg11L05T3ZrTwqwMQrRlQ_gsQYoWtgx1RLMrt/exec';
-
-  function salvarNaPlanilha(dados) {
-    return fetch(SHEETBEST_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(dados)
-    }).catch(function(err) {
-      console.warn('Erro ao salvar na planilha, dado salvo apenas localmente.', err);
-    });
-  }
-
-  // ===== MODAL GENÉRICO (outros produtos) =====
-  function abrirListaEspera(produto) {
-    produtoEspera = produto;
-    document.getElementById('modal-produto-nome').textContent = produto;
-    document.getElementById('form-espera').style.display = 'flex';
-    document.getElementById('espera-sucesso').style.display = 'none';
-    document.getElementById('espera-nome').value = '';
-    document.getElementById('espera-email').value = '';
-    document.getElementById('espera-whatsapp').value = '';
-    var modal = document.getElementById('modal-espera');
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-
-  function fecharModal() {
-    document.getElementById('modal-espera').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  document.getElementById('modal-espera').addEventListener('click', function(e) {
-    if (e.target === this) fecharModal();
-  });
-
-  function enviarListaEspera(e) {
-    e.preventDefault();
-    var nome     = document.getElementById('espera-nome').value.trim();
-    var email    = document.getElementById('espera-email').value.trim();
-    var whatsapp = document.getElementById('espera-whatsapp').value.trim();
-    var data     = new Date().toLocaleString('pt-BR', {timeZone:'America/New_York'});
-
-    var payload = { nome: nome, email: email, whatsapp: whatsapp, produto: produtoEspera, data: data };
-
-    // Salva no localStorage como backup
-    var lista = JSON.parse(localStorage.getItem('lista_espera') || '[]');
-    lista.push(payload);
-    localStorage.setItem('lista_espera', JSON.stringify(lista));
-
-    // Envia para o Google Sheets via Sheet.best
-    salvarNaPlanilha(payload);
-
-    document.getElementById('form-espera').style.display = 'none';
-    document.getElementById('espera-sucesso').style.display = 'block';
-    setTimeout(fecharModal, 3000);
-  }
-</script>
 
 </body>
 </html>
