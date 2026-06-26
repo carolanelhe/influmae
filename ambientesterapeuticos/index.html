@@ -40,6 +40,34 @@
   }
   .nav-logo { font-family: var(--serif); font-size: 1.5rem; text-decoration: none; color: var(--dark); }
   .nav-logo span { color: var(--green); }
+  
+  /* Menu Hambúrguer */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.35rem;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+  }
+  .nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  .nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  .nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
   .nav-links { display: flex; gap: 2rem; align-items: center; }
   .nav-links a { text-decoration: none; color: var(--dark); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; }
   
@@ -172,6 +200,45 @@
   }
 
   @media (max-width: 768px) {
+    nav {
+      padding: 1rem 1.5rem;
+    }
+    
+    .nav-toggle {
+      display: flex;
+    }
+    
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(245, 237, 228, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-bottom: 1px solid rgba(44,44,44,0.08);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .nav-links.active {
+      max-height: 500px;
+    }
+    
+    .nav-links a {
+      display: block;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(44,44,44,0.05);
+      font-size: 0.9rem;
+    }
+    
+    .nav-links a:last-child {
+      border-bottom: none;
+    }
+
     .hero { grid-template-columns: 1fr; padding: 8rem 1.5rem 4rem; text-align: center; }
     .hero-img { order: -1; }
     .problem-grid { grid-template-columns: 1fr; }
@@ -184,7 +251,12 @@
 
 <nav>
   <a href="/" class="nav-logo">influ<span>mae</span></a>
-  <div class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
     <a href="#problema">O Problema</a>
     <a href="#solucao">A Solução</a>
     <a href="#servicos">Serviços</a>
@@ -381,6 +453,25 @@
   <a href="/" class="footer-logo">influ<span>mae</span></a>
   <p>© 2025 influmae · Carol Anelhe · Arquitetura Sensorial</p>
 </footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', function() {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Fechar menu ao clicar em um link
+  const links = navLinks.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', function() {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
